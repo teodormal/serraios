@@ -1,0 +1,677 @@
+<!doctype html>
+<html lang="el">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Μενού · Τζαμάικα Ντισκοκαφενείο</title>
+<meta name="description" content="Το μενού του Τζαμάικα: πρωινό, μεζέδες, ουζομεζέδες, μερίδες, καφέδες, αποστάγματα και cocktails. Βασιλέως Γεωργίου 44, Θεσσαλονίκη.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Commissioner:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+    --plaster:#f5eee1; --plaster2:#ece2cf; --ink:#1f1a17; --ink2:#5a4d42;
+    --mustard:#e2b13c; --green:#2f5d4e; --green-d:#21443a; --clay:#b5532f; --line:#d9cbb2;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Commissioner",system-ui,sans-serif;background:var(--plaster);color:var(--ink);line-height:1.65;font-size:17px}
+  a{color:inherit}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+  .serif{font-family:"GFS Didot",Georgia,serif}
+
+  /* top bar */
+  header{position:sticky;top:0;z-index:20;background:var(--ink);color:var(--plaster)}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;min-height:56px;gap:10px;flex-wrap:wrap}
+  .brand{font-family:"GFS Didot",serif;font-size:1.35rem;text-decoration:none;letter-spacing:.5px}
+  .brand b{color:var(--mustard);font-weight:400}
+  nav{display:flex;gap:18px;flex-wrap:wrap}
+  nav a{text-decoration:none;font-size:.92rem;font-weight:600;letter-spacing:.3px;opacity:.85}
+  @media (max-width:520px){header .wrap{justify-content:center;padding-top:6px;padding-bottom:6px}.brand{display:none}nav{gap:14px;justify-content:center}nav a{font-size:.85rem}}
+  nav a:hover{opacity:1;color:var(--mustard)}
+
+  /* hero */
+  .hero{position:relative;text-align:center;padding:0 0 40px;overflow:hidden}
+  .lights{display:block;width:100%;height:90px}
+  .lights .b{filter:drop-shadow(0 0 6px rgba(242,201,76,.9))}
+  @media (prefers-reduced-motion:no-preference){
+    .lights .b{animation:glow 2.4s ease-in-out infinite}
+    .lights .b:nth-of-type(3n){animation-delay:.8s}
+    .lights .b:nth-of-type(3n+1){animation-delay:1.6s}
+  }
+  @keyframes glow{50%{opacity:.55}}
+  .logo{display:block;width:min(680px,100%);height:auto;margin:18px auto 6px}
+  .motto{font-family:"GFS Didot",serif;font-size:clamp(1.5rem,4.5vw,2.2rem);margin:6px 0 8px}
+  .motto em{color:var(--clay);font-style:normal}
+  .sub{color:var(--ink2);max-width:560px;margin:0 auto 28px}
+  .btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .btn{display:inline-block;padding:13px 24px;border-radius:4px;text-decoration:none;font-weight:800;letter-spacing:.3px;border:2px solid var(--ink)}
+  .btn.primary{background:var(--ink);color:var(--plaster)}
+  .btn.primary:hover{background:var(--green)}
+  .btn.ghost:hover{background:var(--mustard)}
+
+  /* cement tile band */
+  .tiles{height:44px;background-color:var(--plaster2);
+    background-image:
+      radial-gradient(circle at 50% 50%,var(--mustard) 0 5px,transparent 6px),
+      conic-gradient(from 45deg at 50% 50%,var(--green) 0 25%,transparent 0 50%,var(--green) 0 75%,transparent 0),
+      radial-gradient(circle at 0 0,var(--clay) 0 9px,transparent 10px),
+      radial-gradient(circle at 100% 0,var(--clay) 0 9px,transparent 10px),
+      radial-gradient(circle at 0 100%,var(--clay) 0 9px,transparent 10px),
+      radial-gradient(circle at 100% 100%,var(--clay) 0 9px,transparent 10px);
+    background-size:44px 44px,44px 44px,44px 44px,44px 44px,44px 44px,44px 44px;
+    border-top:3px solid var(--ink);border-bottom:3px solid var(--ink)}
+
+  section{padding:44px 0}
+  .kicker{display:block;text-align:center;font-size:.8rem;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--clay);margin-bottom:6px}
+  h2{font-family:"GFS Didot",serif;font-weight:400;font-size:clamp(2rem,6vw,2.8rem);text-align:center;line-height:1.15}
+  .lead{color:var(--ink2);text-align:center;max-width:620px;margin:10px auto 24px}
+
+  /* about */
+  .three{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+  .moment{background:#fffaf1;border:2px solid var(--ink);border-radius:4px;padding:22px 20px;box-shadow:5px 5px 0 var(--mustard)}
+  .moment:nth-child(2){box-shadow:5px 5px 0 var(--green)}
+  .moment:nth-child(3){box-shadow:5px 5px 0 var(--clay)}
+  .moment .when{font-size:.8rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--ink2)}
+  .moment h3{font-family:"GFS Didot",serif;font-weight:400;font-size:1.6rem;margin:2px 0 6px}
+  .moment p{color:var(--ink2)}
+
+  /* menu board */
+  .board-sec{background:var(--green-d)}
+  .board-sec h2,.board-sec .lead{color:var(--plaster)}
+  .board-sec .lead{opacity:.85}
+  .board-sec .kicker{color:var(--mustard)}
+  .board{background:var(--green);border:10px solid #6b4a2e;border-radius:6px;padding:28px 24px;color:var(--plaster);
+    box-shadow:inset 0 0 40px rgba(0,0,0,.35),0 8px 24px rgba(0,0,0,.3);display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:26px 48px;max-width:860px;margin:0 auto}
+  .board h3{font-family:"GFS Didot",serif;font-weight:400;font-size:1.6rem;color:var(--mustard);border-bottom:1px dashed rgba(245,238,225,.4);padding-bottom:4px;margin-bottom:10px}
+  .item{display:flex;align-items:baseline;gap:8px;margin:6px 0}
+  .item span:first-child{white-space:nowrap}
+  .item .dots{flex:1;border-bottom:2px dotted rgba(245,238,225,.45);transform:translateY(-4px)}
+  .item .price{color:var(--mustard);font-weight:600;white-space:nowrap}
+  .note{font-size:.9rem;opacity:.75;text-align:center;margin-top:18px;color:var(--plaster)}
+
+  /* music records */
+  .records{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:26px;justify-items:center}
+  .rec{text-align:center}
+  .disc{width:170px;height:170px;border-radius:50%;margin:0 auto 14px;position:relative;
+    background:repeating-radial-gradient(circle,#1f1a17 0 2px,#2c2622 2px 4px);box-shadow:0 6px 14px rgba(0,0,0,.25)}
+  .disc::after{content:"";position:absolute;inset:32%;border-radius:50%;background:var(--c);
+    box-shadow:inset 0 0 0 3px rgba(0,0,0,.15)}
+  .disc::before{content:"";position:absolute;left:50%;top:50%;width:10px;height:10px;margin:-5px;border-radius:50%;background:var(--plaster);z-index:1}
+  .rec:hover .disc{transform:rotate(25deg);transition:transform .6s}
+  .rec h3{font-family:"GFS Didot",serif;font-weight:400;font-size:1.5rem}
+  .rec p{color:var(--ink2);font-size:.95rem}
+  .soon{max-width:620px;margin:34px auto 0;text-align:center;border:2px dashed var(--ink2);border-radius:4px;padding:16px;color:var(--ink2)}
+
+  /* contact sign */
+  .contact-sec{background:var(--plaster2)}
+  .sign{max-width:720px;margin:0 auto;background:var(--ink);color:var(--plaster);border-radius:6px;padding:30px 26px;
+    outline:3px solid var(--mustard);outline-offset:-12px}
+  .sign dl{display:grid;grid-template-columns:auto 1fr;gap:12px 22px}
+  .sign dt{font-size:.78rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--mustard);padding-top:3px}
+  .sign dd a{color:var(--plaster)}
+  .sign dd a:hover{color:var(--mustard)}
+  @media (max-width:520px){.sign dl{grid-template-columns:1fr;gap:2px}.sign dd{margin-bottom:12px}}
+
+  footer{background:var(--ink);color:var(--plaster);text-align:center;padding:26px 0;font-size:.9rem}
+  footer .serif{font-size:1.2rem;color:var(--mustard)}
+  .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .story{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:40px;align-items:center;margin:0 0 36px}
+  .photo{background:#fff;padding:12px 12px 0;border:1px solid var(--line);box-shadow:0 10px 24px rgba(31,26,23,.18);transform:rotate(-1.5deg);max-width:440px;justify-self:center}
+  .photo img{display:block;width:100%;height:auto}
+  .photo figcaption{font-family:"GFS Didot",serif;text-align:center;padding:10px 0 12px;color:var(--ink2)}
+  .story-text h3{font-family:"GFS Didot",serif;font-weight:400;font-size:clamp(1.6rem,4vw,2.1rem);line-height:1.2;margin-bottom:14px}
+  .story-text p{color:var(--ink2);margin-bottom:14px}
+  .story-text .sig{font-family:"GFS Didot",serif;font-size:1.3rem;color:var(--clay)}
+  @media (max-width:760px){.story{grid-template-columns:1fr;gap:28px}.photo{transform:none}}
+
+/* homepage menu teaser */
+.teaser{text-align:center}
+.menu-btn{background:var(--mustard);color:var(--ink);border-color:var(--mustard);font-size:1.05rem;padding:15px 30px}
+.menu-btn:hover{background:var(--plaster);border-color:var(--plaster)}
+nav a.on{color:var(--mustard);opacity:1}
+
+/* menu page */
+.page-head{text-align:center;padding:24px 0 20px}
+.page-head .logo-sm{display:block;width:min(360px,80%);height:auto;margin:0 auto 10px}
+.page-head h1{font-family:"GFS Didot",serif;font-weight:400;font-size:clamp(2.4rem,7vw,3.4rem);line-height:1.1}
+.page-head p{color:var(--ink2);max-width:560px;margin:10px auto 0}
+.cats{position:sticky;top:56px;z-index:10;background:var(--ink);padding:10px 0}
+.cats .wrap{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.cats a{color:var(--plaster);text-decoration:none;font-weight:600;font-size:.92rem;padding:6px 14px;border:1px solid rgba(245,238,225,.35);border-radius:999px}
+.cats a:hover{background:var(--mustard);color:var(--ink);border-color:var(--mustard)}
+.cat{padding:28px 0 8px;scroll-margin-top:120px}
+.cat h2{margin-bottom:16px;font-size:clamp(1.7rem,5vw,2.2rem)}
+.dishes{display:flex;flex-wrap:wrap;justify-content:center;gap:16px}
+.dishes .dish{flex:1 1 240px;max-width:300px}
+.dish{background:#fffaf1;border:2px solid var(--ink);border-radius:4px;overflow:hidden;display:flex;flex-direction:column}
+.dish .pic{aspect-ratio:16/10;background:var(--plaster2);display:flex;align-items:center;justify-content:center;border-bottom:2px solid var(--ink);
+  background-image:repeating-linear-gradient(45deg,transparent 0 14px,rgba(31,26,23,.05) 14px 28px);color:var(--ink2);font-size:.9rem}
+.dish .pic img{width:100%;height:100%;object-fit:cover;display:block}
+.dish .body{padding:10px 12px 12px;display:flex;flex-direction:column;gap:4px;flex:1}
+.dish .row{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.dish h3{font-family:"GFS Didot",serif;font-weight:400;font-size:1.2rem;line-height:1.2}
+.dish .price{font-weight:800;color:var(--clay);white-space:nowrap}
+.dish p{color:var(--ink2);font-size:.93rem}
+.back{text-align:center;padding:24px 0 40px}
+@media (max-width:520px){.cats{top:auto;position:static}}
+
+.cat.contact-sec{background:transparent}
+.dish .pic{font-size:.8rem}
+
+/* menu list rows */
+.mlist{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:12px 28px;max-width:980px;margin:0 auto}
+.mi{display:grid;grid-template-columns:64px 1fr auto;gap:12px;align-items:center;background:#fffaf1;border:1px solid var(--line);border-radius:6px;padding:8px 12px 8px 8px}
+.mi.pop{border-color:var(--mustard);box-shadow:3px 3px 0 var(--mustard)}
+.mi .th{width:64px;height:64px;border-radius:4px;overflow:hidden;background:var(--plaster2);background-image:radial-gradient(circle at 50% 50%,var(--mustard) 0 4px,transparent 5px),conic-gradient(from 45deg at 50% 50%,rgba(47,93,78,.35) 0 25%,transparent 0 50%,rgba(47,93,78,.35) 0 75%,transparent 0);background-size:32px 32px}
+.mi .th img{width:100%;height:100%;object-fit:cover;display:block}
+.mi .noimg{display:block;width:100%;height:100%;background:var(--plaster2);
+  background-image:radial-gradient(circle at 50% 50%,var(--mustard) 0 4px,transparent 5px),conic-gradient(from 45deg at 50% 50%,rgba(47,93,78,.35) 0 25%,transparent 0 50%,rgba(47,93,78,.35) 0 75%,transparent 0);background-size:32px 32px}
+.mi .nm{display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-family:"GFS Didot",serif;font-size:1.12rem;line-height:1.25}
+.mi .badge{font-family:"Commissioner",sans-serif;font-size:.68rem;font-weight:800;letter-spacing:.5px;text-transform:uppercase;background:var(--mustard);color:var(--ink);padding:2px 7px;border-radius:999px}
+.mi p{color:var(--ink2);font-size:.86rem;line-height:1.4;margin-top:2px}
+.mi .pr{font-weight:800;color:var(--clay);white-space:nowrap}
+.cats a.drinks-chip{border-color:var(--mustard);color:var(--mustard)}
+.drinks{margin-top:36px}
+.dboard{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));max-width:1040px}
+.dcol .item{font-size:.93rem}
+.dcol .item span:first-child{white-space:normal}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="brand" href="index.html">Τζαμάικα<b>·</b></a>
+    <nav>
+      <a href="index.html#about">Το μαγαζί</a>
+      <a class="on" href="menu.html">Μενού</a>
+      <a href="index.html#music">Μουσική</a>
+      <a href="index.html#contact">Επικοινωνία</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="page-head">
+    <div class="wrap">
+      <a href="index.html"><img class="logo-sm" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjQwIDYwMCAxNzQwIDUyMCIgd2lkdGg9IjE3NDAiIGhlaWdodD0iNTIwIj4KPHRpdGxlPkphbWFpa2Egzr3PhM65z4POus6/zrrOsc+GzrXOvc61zq/OvzwvdGl0bGU+CjxnPjxwYXRoIGQ9Ik0wIDAgQzEuOTQgMC4zMSAxLjk0IDAuMzEgNCAyIEM4LjE5IDkuNzkgNy44IDE4LjY2IDYuNTEgMjcuMjUgQzYgMzEgNS43NSAzNC42NyA1LjU3IDM4LjQ1IEM1LjUgMzkuODggNS40MyA0MS4zMSA1LjM1IDQyLjc0IEM1LjMyIDQzLjQ4IDUuMjggNDQuMjEgNS4yNCA0NC45NyBDNC4zNSA2Mi4zOCAzLjEgNzguODcgLTIuNzkgOTUuMzggQy01LjggMTA0LjQgLTguNzkgMTE1LjQ0IC03IDEyNSBDLTQuNDIgMTI4LjM2IC0yLjc5IDEyOC44NCAxLjMxIDEyOS42OSBDNS44NSAxMjguODQgNy43NiAxMjcuMDcgMTEuMDEgMTIzLjkyIEMxNC45NyAxMjAuMSAxOS4xOCAxMTcuMTkgMjMuOTggMTE0LjUgQzI0LjU1IDExNC4xOCAyNS4xMSAxMTMuODYgMjUuNyAxMTMuNTMgQzI2LjkgMTEyLjg1IDI4LjExIDExMi4xNyAyOS4zMiAxMTEuNDkgQzMyLjQ4IDEwOS43MSAzNS42NCAxMDcuOTEgMzguOCAxMDYuMTEgQzM5LjQzIDEwNS43NSA0MC4wNSAxMDUuMzkgNDAuNjkgMTA1LjAzIEM1NS41OSA5Ni41NCA2OS4zNSA4OC4wOCA4MS4yOSA3NS42MSBDODEuODIgNzUuMDYgODIuMzUgNzQuNTEgODIuOSA3My45NCBDODMuODkgNzIuODkgODQuODcgNzEuODMgODUuODMgNzAuNzQgQzg4LjQxIDY3Ljk5IDkwLjAzIDY2Ljk5IDkzLjcyIDY2LjA0IEM5NC44IDY2LjAzIDk1Ljg5IDY2LjAxIDk3IDY2IEM5OSA2OCA5OSA2OCA5OS41IDcxLjEyIEM5OC44MSA3Ni40NCA5Ni41MSA3OS4wOCA5MyA4MyBDOTIuNzIgODMuMzIgOTIuNzIgODMuMzIgOTEuMzEgODQuOTMgQzgzLjQyIDkzLjM4IDczLjM2IDk5LjggNjMuNDIgMTA1LjU4IEM1OS44MiAxMDcuNjkgNTYuMzIgMTA5Ljk1IDUyLjggMTEyLjIxIEM1MC45MSAxMTMuNDIgNDkuMDEgMTE0LjYzIDQ3LjExIDExNS44MiBDNDYuMTYgMTE2LjQyIDQ1LjIyIDExNy4wMSA0NC4yNSAxMTcuNjIgQzQzLjgzIDExNy44OSA0My44MyAxMTcuODkgNDEuNyAxMTkuMjMgQzQwLjI1IDEyMC4xOCAzOC44MSAxMjEuMTQgMzcuNDQgMTIyLjIgQzMyLjE4IDEyNi4yMyAyNi42NiAxMjguMTcgMjAuNDEgMTMwLjIzIEMxNS4xNyAxMzIuMSAxMi41NiAxMzMuNzggMTAgMTM5IEM5LjU2IDE0My4yNCA5LjQ3IDE0Ni41IDEyIDE1MCBDMTQuMzkgMTUxLjA5IDE2LjY1IDE1MS45OCAxOS4xMiAxNTIuODEgQzI1LjgxIDE1NS4yNiAzMi42NCAxNTguMjkgMzYgMTY1IEMzNi4xOSAxNjggMzYuMTkgMTY4IDM2IDE3MSBDMzUuMzQgMTcxLjY2IDM0LjY4IDE3Mi4zMiAzNCAxNzMgQzI5LjE3IDE3Mi43NyAyNi43IDE3MS4zNCAyMy4xMiAxNjguMTkgQzEyLjY3IDE1OS4zOSAyLjMxIDE1Ny44NyAtMTEgMTU5IEMtMTQuNDYgMTU5LjgxIC0xNy4wNSAxNjEuMDQgLTIwIDE2MyBDLTIwLjY5IDE2My40MSAtMjEuMzggMTYzLjgzIC0yMi4xIDE2NC4yNSBDLTI4Ljk1IDE2OC43NiAtMzIuNTUgMTc1LjEyIC0zNS4zOCAxODIuNjkgQy0zNy4xMiAxOTEuOTQgLTM0LjU5IDE5OS4wMyAtMjkuNzkgMjA3LjAxIEMtMjIuMzYgMjE2LjY3IC0xMC42NSAyMjIuNTUgMSAyMjUgQzEuNDQgMjI1LjEgMS40NCAyMjUuMSAzLjY4IDIyNS42MyBDMjUuNjYgMjI5LjE2IDUwLjc1IDIxNi4yOSA2OC4zOCAyMDQuMzkgQzc4LjI3IDE5Ny4xNSA4NS40NiAxODcuNTcgOTIuNDMgMTc3LjY0IEMxMDIuNTYgMTYzLjI0IDExMS44IDE1Mi40NiAxMzAgMTQ5IEMxMzMuMTUgMTQ4LjY1IDEzNi4yNyAxNDguNTIgMTM5LjQ0IDE0OC41IEMxNDAuMTcgMTQ4LjQ5IDE0MC45IDE0OC40OSAxNDEuNjYgMTQ4LjQ4IEMxNDcuNTkgMTQ4LjYyIDE1My4yMSAxNDkuOCAxNTcuOTUgMTUzLjU0IEMxNTguMTcgMTUzLjgxIDE1OC4xNyAxNTMuODEgMTU5LjI1IDE1NS4xOSBDMTU5LjY5IDE1NS43MiAxNjAuMTMgMTU2LjI1IDE2MC41OCAxNTYuNzkgQzE2NC42MyAxNjMuMDkgMTY2Ljc0IDE2OS4yNCAxNjguMzggMTc2LjUgQzE3MC44NyAxODYuNTMgMTczLjY0IDE5MS45NCAxODIuMzggMTk3LjgxIEMxOTIuNTMgMjAzLjggMTk4LjkyIDIwNC45MSAyMTAuNTUgMjAyLjE2IEMyMTkuODIgMTk5LjQ2IDIyNi43OSAxOTUuMjEgMjM0LjM1IDE4OS4yOCBDMjM2Ljg5IDE4Ny4zMSAyMzkuNTIgMTg1LjQ1IDI0Mi4xMiAxODMuNTYgQzI1MS42NCAxNzYuMzYgMjU5Ljk5IDE2OC4wNSAyNjguMzQgMTU5LjU3IEMyNzIuMDEgMTU1Ljg5IDI3NS43OSAxNTIuNjEgMjc5Ljk4IDE0OS41NCBDMjgyIDE0OCAyODMuNzQgMTQ2LjMzIDI4NS41NiAxNDQuNTYgQzI5OC4xNiAxMzMuNDggMzE1LjgzIDEyOC40OSAzMzIuMyAxMjguNjkgQzMzOC40NiAxMjkuMjEgMzQzLjk3IDEzMS4xIDM0OS43NSAxMzMuMTkgQzM1MC4zMiAxMzMuMzggMzUwLjMyIDEzMy4zOCAzNTMuMjEgMTM0LjM2IEMzNjIuMjQgMTM3LjUgMzcwLjg2IDE0MS4wMSAzNzguNDQgMTQ2Ljk0IEMzODIuODcgMTUwLjI3IDM4Ny4zNiAxNTIuOTcgMzkyLjMgMTU1LjQ4IEMzOTQuNSAxNTYuNzIgMzk2LjMzIDE1Ny45OCAzOTguMzMgMTU5LjUgQzQwMiAxNjIuMTcgNDA1LjY5IDE2My41MyA0MTAgMTY0Ljg4IEM0MTUuNyAxNjYuNzUgNDIwLjkyIDE2OC44OCA0MjYuMjUgMTcxLjYyIEM0MzUuMzUgMTc2LjEzIDQ0NS4wMyAxNzcuNTQgNDU1IDE3OSBDNDU1LjUgMTc5LjA3IDQ1NS41IDE3OS4wNyA0NTguMDYgMTc5LjQ1IEM0NjMuMDEgMTgwLjE3IDQ2Ny45NiAxODAuODYgNDcyLjkzIDE4MS40OCBDNDczLjcxIDE4MS41OCA0NzQuNSAxODEuNjggNDc1LjMxIDE4MS43OSBDNDgzLjczIDE4Mi40NSA0OTEuNDggMTgxLjI2IDQ5OS43MyAxNzkuNzEgQzUwMS44NiAxNzkuMzIgNTA0IDE3OC45NCA1MDYuMTQgMTc4LjU3IEM1MTguNDcgMTc2LjM0IDUyNy4zOCAxNzIuMDEgNTM3IDE2NCBDNTM3LjU4IDE2My41NiA1MzguMTcgMTYzLjEzIDUzOC43NyAxNjIuNjggQzU0OC4xMSAxNTUuNDEgNTU0LjQxIDE0NS43IDU1OC4wNiAxMzQuNTggQzU1OSAxMzIgNTU5IDEzMiA1NjEgMTMwIEM1NjMuNSAxMjkuNjIgNTYzLjUgMTI5LjYyIDU2NiAxMzAgQzU2OC4zNSAxMzMuNiA1NjguMjUgMTM2LjMxIDU2Ny42NiAxNDAuNDUgQzU2NC4xIDE1NC4xNSA1NTIuMjIgMTY4LjcgNTQwLjM4IDE3Ni4xMiBDNTM4LjYgMTc3LjExIDUzNi44IDE3OC4wNyA1MzUgMTc5IEM1MzMuODggMTc5LjYgNTMyLjc1IDE4MC4yIDUzMS41OSAxODAuODIgQzUwMy40NSAxOTUuMjggNDU2LjgzIDE5Mi40NiA0MjcgMTgzIEM0MjYuMTIgMTgyLjcyIDQyNS4yNSAxODIuNDUgNDI0LjM0IDE4Mi4xNiBDNDEzLjg1IDE3OC43NyA0MDQuMTQgMTc1LjA4IDM5NC45NCAxNjguOTQgQzM5MS44NCAxNjYuODkgMzg4LjY3IDE2NS4xNiAzODUuMzggMTYzLjQ0IEMzODEuNDUgMTYxLjM2IDM3Ny43IDE1OS4yIDM3NCAxNTYuNzUgQzM2OC41NCAxNTMuMTkgMzYyLjgzIDE1MC4xNiAzNTcuMDYgMTQ3LjEyIEMzNTYuMTQgMTQ2LjY0IDM1NS4yMSAxNDYuMTUgMzU0LjI2IDE0NS42NCBDMzUzLjM4IDE0NS4xOSAzNTIuNSAxNDQuNzMgMzUxLjYgMTQ0LjI2IEMzNTAuODEgMTQzLjg1IDM1MC4wMiAxNDMuNDQgMzQ5LjIxIDE0My4wMSBDMzQzLjIgMTQwLjI2IDMzNi45MyAxNDAuNzQgMzMwLjQ0IDE0MC42OSBDMzI5LjMxIDE0MC42NiAzMjguMTggMTQwLjYzIDMyNy4wMSAxNDAuNiBDMzE1LjQyIDE0MC41MSAzMDYuNzggMTQzLjk0IDI5Ny4yNSAxNTAuMzEgQzI5Ni45IDE1MC41NCAyOTYuOSAxNTAuNTQgMjk1LjEyIDE1MS42NyBDMjg4Ljg0IDE1NS43OSAyODMuODQgMTYwLjc4IDI3OSAxNjYuNSBDMjcxLjIzIDE3NS40OCAyNjIuNzIgMTg0LjYzIDI1Mi45MyAxOTEuNDEgQzI1MSAxOTMgMjUxIDE5MyAyNDguNjcgMTk1LjkgQzI0Ni4wMyAxOTkuMTUgMjQyLjkyIDIwMS4zOCAyMzkuMzggMjAzLjU2IEMyMzguNzYgMjAzLjk1IDIzOC4xNCAyMDQuMzMgMjM3LjUgMjA0LjczIEMyMjAuNDQgMjE1LjE3IDIwMy41MyAyMTguMTQgMTg0LjA2IDIxMy42OSBDMTc3Ljk3IDIxMi4xOSAxNzIuNzYgMjEwLjIzIDE2OC4zOCAyMDUuNTYgQzE2Ny43OSAyMDQuOTUgMTY3LjIxIDIwNC4zNCAxNjYuNjEgMjAzLjcxIEMxNjYuMzQgMjAzLjQzIDE2Ni4zNCAyMDMuNDMgMTY1IDIwMiBDMTYwLjI0IDE5Ny4xMiAxNjAuMjQgMTk3LjEyIDE1NS42MiAxOTYuNjkgQzE1MiAxOTcgMTUyIDE5NyAxNDkuOTQgMTk4LjUgQzE0OC44NSAxOTkuOSAxNDcuNzggMjAxLjMgMTQ2Ljc0IDIwMi43MyBDMTM4LjY1IDIxMy44MSAxMjkuODcgMjIyLjIzIDExNiAyMjUgQzEwNi43OSAyMjYuMDkgMTAxLjI1IDIyMi44NSA5NC4xMiAyMTcuMzEgQzkzLjM5IDIxNi43MSA5Mi42NSAyMTYuMTEgOTEuODggMjE1LjQ5IEM4OC4zIDIxMi42NiA4NS4zIDIxMi40MyA4MC44MiAyMTIuNDYgQzc2LjM3IDIxMy4zMSA3My42NSAyMTYuMDUgNzAuMTggMjE4Ljg0IEM2NS44MiAyMjEuOCA2MS4zMiAyMjMuMjQgNTYuMzQgMjI0Ljg0IEM1MS44NyAyMjYuMyA0Ny44NCAyMjcuOTkgNDMuNjkgMjMwLjI1IEMzMi43NyAyMzUuOSAyMC45OCAyMzUuMzMgOSAyMzUgQzguMTEgMjM0Ljk4IDcuMjMgMjM0Ljk2IDYuMzIgMjM0Ljk0IEMzLjUyIDIzNC44NyAwLjczIDIzNC43OSAtMi4wNiAyMzQuNjkgQy0yLjkzIDIzNC42NyAtMy44IDIzNC42NCAtNC42OSAyMzQuNjIgQy0xMy42OCAyMzQuMjQgLTE5Ljk5IDIzMS40NyAtMjcuMTIgMjI2LjEyIEMtMjcuNzEgMjI1LjcgLTI4LjI5IDIyNS4yOCAtMjguODkgMjI0Ljg1IEMtMzAuNjEgMjIzLjU5IC0zMi4zMSAyMjIuMyAtMzQgMjIxIEMtMzQuNTMgMjIwLjYgLTM1LjA3IDIyMC4yIC0zNS42MiAyMTkuNzggQy0zOS4zMSAyMTYuODkgLTQxLjY3IDIxMy44NCAtNDQuMTIgMjA5Ljg4IEMtNDguMzMgMjAzLjEgLTQ4LjMzIDIwMy4xIC01MiAyMDEgQy01Ny4xNSAxOTkuOTQgLTYxLjc2IDIwMC43MiAtNjYuMiAyMDMuNiBDLTY5LjE1IDIwNS45IC03MS44NiAyMDguNDYgLTc0LjYyIDIxMC45OCBDLTc3LjcxIDIxMy42IC04MC45OCAyMTUuNTggLTg0LjQ5IDIxNy41NyBDLTg3IDIxOSAtODcgMjE5IC04OS4yNiAyMjAuNTMgQy05OS45OSAyMjcuNjcgLTExNC4xMiAyMzEuODkgLTEyNyAyMzAgQy0xMzIuODIgMjI4LjM3IC0xMzcuMTcgMjI1Ljc2IC0xNDEgMjIxIEMtMTQzIDIxNy4yMSAtMTQzLjYyIDIxMy4xNyAtMTQ0LjM0IDIwOC45OSBDLTE0NSAyMDcgLTE0NSAyMDcgLTE0OCAyMDUgQy0xNTYuMzkgMjAzLjM3IC0xNjIuMDEgMjA2Ljc5IC0xNjkgMjExIEMtMTc3LjE3IDIxNS4xMyAtMTg1LjIxIDIxNS4yMyAtMTk0LjE5IDIxNS4zMSBDLTE5NS4yNiAyMTUuMzQgLTE5Ni4zMyAyMTUuMzcgLTE5Ny40NCAyMTUuNCBDLTIwNi4xIDIxNS40NyAtMjE0LjQ3IDIxNC4wOSAtMjIxLjQ0IDIwOC41NiBDLTIyNCAyMDYgLTIyNCAyMDYgLTIyNiAyMDMuMzggQy0yMjguODcgMTk5Ljk3IC0yMzEuNjQgMTk4LjQ0IC0yMzYuMDMgMTk3LjYyIEMtMjM5LjU2IDE5Ny4zNSAtMjQyLjAyIDE5Ny4zMSAtMjQ0Ljk3IDE5OS4zOSBDLTI0Ni45MiAyMDEuMzcgLTI0OC42OCAyMDMuNDIgLTI1MC40NCAyMDUuNTYgQy0yNTEuNzMgMjA3LjA0IC0yNTMuMDQgMjA4LjUyIC0yNTQuMzUgMjA5Ljk5IEMtMjU0Ljk3IDIxMC42OSAtMjU1LjYgMjExLjM5IC0yNTYuMjQgMjEyLjEyIEMtMjU5LjcgMjE1LjgyIC0yNjMuNiAyMTguNTQgLTI2OCAyMjEgQy0yNjguMzcgMjIxLjIxIC0yNjguMzcgMjIxLjIxIC0yNzAuMjIgMjIyLjI5IEMtMjc2LjAxIDIyNS4yOCAtMjgxLjU2IDIyNS45NiAtMjg4IDIyNSBDLTI5MC42OCAyMjQuMDUgLTI5Mi43NCAyMjIuNzEgLTI5NSAyMjEgQy0yOTUuNyAyMjAuNDggLTI5Ni40MSAyMTkuOTcgLTI5Ny4xMyAyMTkuNDMgQy0yOTguNTMgMjE4LjM5IC0yOTkuOTIgMjE3LjM0IC0zMDEuMyAyMTYuMjcgQy0zMDUuNSAyMTMuMTMgLTMwOS45NCAyMTMuNDUgLTMxNSAyMTQgQy0zMTguMDEgMjE1LjUxIC0zMjAuMTcgMjE3LjIyIC0zMjIuNjEgMjE5LjUxIEMtMzI2Ljk5IDIyMy41NCAtMzMxLjU0IDIyNi43NSAtMzM2LjYyIDIyOS44MSBDLTMzNy4yNiAyMzAuMiAtMzM3Ljg5IDIzMC41OCAtMzM4LjU0IDIzMC45OCBDLTM1MS4wMSAyMzguMzMgLTM2Ni4xOCAyMzguMzYgLTM4MCAyMzUgQy0zODQuMDcgMjMzLjEyIC0zODcuNDUgMjMwLjcyIC0zOTEgMjI4IEMtMzkxLjkyIDIyNy4zOCAtMzkyLjg1IDIyNi43NSAtMzkzLjggMjI2LjExIEMtMzk5LjY2IDIyMi4xMiAtNDA0LjI1IDIxNy43NiAtNDA4Ljg4IDIxMi40MSBDLTQxMi45NyAyMDcuNzcgLTQxNi42MyAyMDMuNzQgLTQyMi42MiAyMDEuODggQy00MjYuNzQgMjAyLjAzIC00MjguNjQgMjAyLjU5IC00MzIgMjA1IEMtNDM2LjI5IDIxMC4wNSAtNDM4Ljc4IDIxNi42MSAtNDQxLjQxIDIyMi42MyBDLTQ0NS40OSAyMzEuNzQgLTQ0NS40OSAyMzEuNzQgLTQ1MCAyMzQgQy00NTMuMzQgMjM0LjM2IC00NTUuMjcgMjM0LjQ5IC00NTguMSAyMzIuNiBDLTQ2MC45MyAyMjguNzMgLTQ2MS4wMiAyMjQuODEgLTQ2MS41IDIyMC4xMiBDLTQ2Mi4xNyAyMTMuNjYgLTQ2Mi43OCAyMDkuMDggLTQ2NyAyMDQgQy00NzAuNzcgMjAxLjUyIC00NzQuMzUgMjAxLjgyIC00NzguNjcgMjAyLjM2IEMtNDgyLjgzIDIwMy41IC00ODUuMDggMjA2LjI5IC00ODcuODEgMjA5LjUgQy00ODguNCAyMTAuMTYgLTQ4OC45OSAyMTAuODIgLTQ4OS42IDIxMS41MSBDLTQ5NS4wMyAyMTcuNzIgLTQ5OS43MiAyMjQuNDIgLTUwNC4zOCAyMzEuMjEgQy01MTIuMDMgMjQyLjMzIC01MTIuMDMgMjQyLjMzIC01MTcuNjkgMjQ0LjI1IEMtNTIxIDI0NCAtNTIxIDI0NCAtNTIzLjQ0IDI0Mi41IEMtNTI1LjU4IDIzOS4wOCAtNTI1LjMgMjM3LjAyIC01MjUgMjMzIEMtNTI0LjE5IDIzMC4wNyAtNTIzLjEyIDIyNy4yNyAtNTIyIDIyNC40NCBDLTUyMC4wNiAyMTkuNSAtNTE4LjQ3IDIxNS40MiAtNTE5IDIxMCBDLTUyMCAyMDkgLTUyMCAyMDkgLTUyMy4xNyAyMDguNzkgQy01MjcuMTQgMjA5LjAxIC01MjkuNjEgMjA5Ljc5IC01MzMuMjEgMjExLjQxIEMtNTM0LjM3IDIxMS45IC01MzUuNTIgMjEyLjQgLTUzNi43MSAyMTIuOTEgQy01MzcuOTIgMjEzLjQ0IC01MzkuMTMgMjEzLjk2IC01NDAuMzggMjE0LjUgQy01NTUuNTYgMjIwLjgxIC01NjcuMTcgMjIyLjkzIC01ODIuOTcgMjE2LjQ4IEMtNTg4LjgyIDIxMy42MiAtNTkzLjA2IDIxMC4yNiAtNTk3LjE5IDIwNS4yNSBDLTU5OS41NyAyMDIuMzYgLTYwMS4xOSAyMDAuNzMgLTYwNSAyMDAgQy02MDguNDUgMTk5Ljc3IC02MDkuOTMgMTk5LjY5IC02MTMgMjAxIEMtNjE3LjAyIDIwNC41OSAtNjIwLjI2IDIwOC43OSAtNjIzLjU5IDIxMy4wMSBDLTYzMC4xOSAyMjEuMTUgLTYzOS43MyAyMjcuMDQgLTY1MC4yOCAyMjguMjcgQy02NTkuNjEgMjI3LjkzIC02NjguMzkgMjIxLjA3IC02NzUgMjE1IEMtNjc2LjYgMjEyLjgxIC02NzguMSAyMTAuNjUgLTY3OS41NiAyMDguMzggQy02ODUuMzggMTk5LjgyIC02OTIuNzcgMTkyLjggLTcwMS44OSAxODcuODIgQy03MDIuOTIgMTg3LjIyIC03MDMuOTQgMTg2LjYyIC03MDUgMTg2IEMtNzA1IDE4NS4zNCAtNzA1IDE4NC42OCAtNzA1IDE4NCBDLTcwMS44MiAxODIuNDEgLTY5OC40NyAxODIuNzIgLTY5NSAxODMgQy02OTQuMDMgMTgzLjMzIC02OTMuMDYgMTgzLjY2IC02OTIuMDYgMTg0IEMtNjg2LjExIDE4NS45NCAtNjc5LjcxIDE4NS43MyAtNjczLjkgMTgzLjMgQy02NjkuODcgMTgwLjU0IC02NjcuNiAxNzYuMDQgLTY2NSAxNzIgQy02NTguNzggMTYzLjE2IC02NDcuMjUgMTU0LjE0IC02MzYuNjQgMTUxLjMzIEMtNjI3LjAxIDE1MC4xMiAtNjE1LjE3IDE0OC44NSAtNjA3IDE1NSBDLTU5OS4wMyAxNjEuOTcgLTU5Ni42NSAxNzEuMTYgLTU5NS4xMyAxODEuMjQgQy01OTMuODggMTg5LjAyIC01OTEuMjQgMTkzLjQ3IC01ODQuOTQgMTk4LjEyIEMtNTg0LjY1IDE5OC4zNCAtNTg0LjY1IDE5OC4zNCAtNTgzLjE4IDE5OS40NCBDLTU3NC45NSAyMDUuNCAtNTY3LjI3IDIwOC4yOSAtNTU3IDIwNyBDLTU1Mi40NCAyMDUuNTYgLTU0OC4yMyAyMDMuNTkgLTU0My45NCAyMDEuNSBDLTU0Mi44MyAyMDAuOTkgLTU0MS43MiAyMDAuNDkgLTU0MC41OCAxOTkuOTcgQy01MzEuMDEgMTk1LjQ1IC01MjMuMjEgMTg5LjYyIC01MTUuOTQgMTgxLjk0IEMtNTEyLjE2IDE3OC4wNiAtNTA4LjI0IDE3NC43NiAtNTAzLjkgMTcxLjUzIEMtNTAxLjU0IDE2OS42MyAtNDk5Ljg0IDE2Ny4zOSAtNDk4IDE2NSBDLTQ5NS4zNCAxNjMuMDUgLTQ5NC4yMSAxNjIuOTkgLTQ5MC44OCAxNjMuMTkgQy00ODggMTY0IC00ODggMTY0IC00ODYgMTY3IEMtNDg1Ljk5IDE2OC45NSAtNDg1Ljk5IDE2OC45NSAtNDg2LjMxIDE3MS4xMiBDLTQ4Ni4zNyAxNzEuNTIgLTQ4Ni4zNyAxNzEuNTIgLTQ4Ni42NCAxNzMuNTEgQy00ODYuNzYgMTc0LjMzIC00ODYuODggMTc1LjE1IC00ODcgMTc2IEMtNDg3LjIyIDE3Ny42NCAtNDg3LjQzIDE3OS4yOSAtNDg3LjYyIDE4MC45NCBDLTQ4Ny43MiAxODEuNjcgLTQ4Ny44MiAxODIuNCAtNDg3LjkxIDE4My4xNSBDLTQ4OCAxODUgLTQ4OCAxODUgLTQ4NyAxODcgQy00ODUuMDcgMTg3LjQ1IC00ODUuMDcgMTg3LjQ1IC00ODIuNjkgMTg3LjY5IEMtNDgyLjMgMTg3LjczIC00ODIuMyAxODcuNzMgLTQ4MC4zMiAxODcuOTUgQy00NzcuOTggMTg4IC00NzYuMjYgMTg3LjYgLTQ3NCAxODcgQy00NjkuMDQgMTg2LjUgLTQ2NS4yIDE4Ni4zNSAtNDYwLjc1IDE4OC43NSBDLTQ1OC45MiAxOTAuMjUgLTQ1Ny4wOCAxOTEuNzUgLTQ1NS4yNSAxOTMuMjUgQy00NTAuNzMgMTk1LjY4IC00NDcuMDIgMTk2LjA0IC00NDIgMTk1IEMtNDM5LjYzIDE5My42NSAtNDM3LjUzIDE5Mi4xIC00MzUuMzUgMTkwLjQ4IEMtNDI5Ljg5IDE4Ny4wNCAtNDIzLjQ0IDE4Ni40NyAtNDE3LjE5IDE4Ny42MiBDLTQwOS44MiAxODkuNzEgLTQwNS42NSAxOTQuMjYgLTQwMSAyMDAgQy0zOTEuMjEgMjExLjkgLTM3OS45MyAyMjMuMyAtMzYzLjkyIDIyNS4yNSBDLTM1My41NyAyMjUuODEgLTM0NS42NSAyMjAuNTEgLTMzNy45NCAyMTQuMTkgQy0zMzYuNDUgMjEyLjk5IC0zMzQuOTYgMjExLjggLTMzMy40NiAyMTAuNjEgQy0zMzIuNzMgMjEwLjAxIC0zMzIgMjA5LjQxIC0zMzEuMjUgMjA4LjggQy0zMjkuNzMgMjA3LjU4IC0zMjguMTkgMjA2LjQgLTMyNi42NCAyMDUuMjMgQy0zMjEuNzkgMjAxLjYxIC0zMTcuOTUgMTk3Ljk5IC0zMTQuMzggMTkzLjEyIEMtMzEzLjkxIDE5Mi41MSAtMzEzLjQ0IDE5MS45IC0zMTIuOTYgMTkxLjI3IEMtMzExLjYzIDE4OS41MiAtMzEwLjMxIDE4Ny43NiAtMzA5IDE4NiBDLTI5NS44NyAxNjguNjEgLTI4MyAxNTIuNTYgLTI2MC4zNSAxNDguMjggQy0yNTAuNjggMTQ3LjEyIC0yNDQuMTcgMTQ3LjczIC0yMzUuOTQgMTUyLjk0IEMtMjI5LjQ2IDE1OC43OCAtMjI2Ljg0IDE2Ny40OSAtMjI1LjM4IDE3NS44MSBDLTIyMy42MiAxODUuNjMgLTIyMC4xNyAxOTEuMTYgLTIxMiAxOTcgQy0yMDIuOSAyMDIuODQgLTE5NS40NCAyMDQuNTggLTE4NC44NSAyMDIuMzMgQy0xNjMuMDEgMTk2LjI3IC0xNDYuNDkgMTgxLjk4IC0xMzEuMDkgMTY2LjAyIEMtMTMwLjc5IDE2NS43MSAtMTMwLjc5IDE2NS43MSAtMTI5LjI1IDE2NC4xMSBDLTEyOC43MSAxNjMuNTQgLTEyOC4xNyAxNjIuOTcgLTEyNy42MiAxNjIuMzkgQy0xMjQuODYgMTYwLjAzIC0xMjIuNTMgMTU5LjggLTExOSAxNjAgQy0xMTUuOTEgMTYxLjk1IC0xMTUuMTUgMTYzLjYgLTExMy44OCAxNjcgQy0xMTMuMDkgMTc1Ljk5IC0xMjEuNzMgMTg2LjAyIC0xMjYuMzYgMTkzLjM4IEMtMTI5LjI0IDE5Ny45OCAtMTI5Ljk2IDIwMS42MSAtMTI5IDIwNyBDLTEyNi45NyAyMTAuMzggLTEyNC41NSAyMTMuMjIgLTEyMSAyMTUgQy0xMDkuNTMgMjE2LjU4IC05OC43OCAyMTAuMyAtODkuODMgMjAzLjY3IEMtODcuMTYgMjAxLjYzIC04NC41MyAxOTkuNTUgLTgxLjkgMTk3LjQ2IEMtNzkgMTk1LjIzIC03NS45NyAxOTMuMjIgLTcyLjk0IDE5MS4xOSBDLTY4LjczIDE4OC4zMSAtNjUuMDggMTg1LjQgLTYxLjYxIDE4MS42OCBDLTU5LjI5IDE3OS4yNiAtNTYuNzUgMTc3LjEzIC01NC4xOSAxNzQuOTcgQy00OC4yIDE2OS41OCAtNDMuMzQgMTY0LjA3IC0zOC45NCAxNTcuMzEgQy0zOC42OCAxNTYuOTIgLTM4LjY4IDE1Ni45MiAtMzcuMzYgMTU0LjkxIEMtMzMuNCAxNDguODEgLTMwLjA0IDE0Mi42IC0yNyAxMzYgQy0yNi40MyAxMzQuOSAtMjUuODYgMTMzLjggLTI1LjI3IDEzMi42NyBDLTIxLjA4IDEyNC41MiAtMTguNzIgMTE2LjUyIC0xNi43OCAxMDcuNTcgQy0xNS40OCAxMDEuNjcgLTEzLjc5IDk2LjMyIC0xMS4xMSA5MC44NiBDLTcuNzUgODIuMjIgLTcuMjkgNzIuNjUgLTYuNDQgNjMuNSBDLTYuMzcgNjIuODIgLTYuMzEgNjIuMTQgLTYuMjQgNjEuNDQgQy01LjA0IDQ4LjcyIC00LjU1IDM2LjAzIC00LjM4IDIzLjI2IEMtNC4xMSA2LjE3IC00LjExIDYuMTcgMCAwIFogTS0yODYuMzkgMTc5LjMzIEMtMjkxLjk0IDE4Ni45NSAtMjk1LjUxIDE5NC40MyAtMjk0IDIwNCBDLTI5Mi45NiAyMDcuMjQgLTI5Mi4wOSAyMDguNDMgLTI4OS4wOCAyMTAgQy0yODMuOTMgMjExLjk5IC0yNzkuNCAyMTIuNSAtMjc0IDIxMSBDLTI3MS41MiAyMDkuNDMgLTI2OS42MyAyMDguMDYgLTI2Ny41IDIwNi4xMiBDLTI2Ni45NCAyMDUuNjMgLTI2Ni4zOCAyMDUuMTQgLTI2NS44MSAyMDQuNjQgQy0yNjAuNyAyMDAgLTI1Ni42OSAxOTQuODMgLTI1MyAxODkgQy0yNTIuNDEgMTg4LjA3IC0yNTEuODIgMTg3LjE1IC0yNTEuMjIgMTg2LjE5IEMtMjQ3LjI5IDE3OS44MSAtMjQ0LjggMTc0LjY0IC0yNDYgMTY3IEMtMjQ3LjcxIDE2My45MyAtMjQ5LjgxIDE2MS41OSAtMjUzIDE2MCBDLTI2OC4wMiAxNTguMzMgLTI3OC4wNSAxNjguMzIgLTI4Ni4zOSAxNzkuMzMgWiBNMTE0IDE3MSBDMTEzLjY4IDE3MS42OSAxMTMuMzYgMTcyLjM4IDExMy4wMyAxNzMuMDkgQzExMS43MiAxNzUuNTEgMTEwLjQzIDE3NS44MSAxMDggMTc3IEMxMDEuOTYgMTg0LjIzIDk5LjU2IDE5MS4wNyA5OS43NSAyMDAuNDQgQzEwMC4xOCAyMDQuNzggMTAxLjggMjA2Ljk1IDEwNSAyMDkuNzUgQzEwOS4wMyAyMTIuMjcgMTEzLjM2IDIxMi42OCAxMTggMjEyIEMxMzAuODkgMjA2LjcgMTQxLjE3IDE4OS45NSAxNDYuNjkgMTc3LjUgQzE0OC4xNCAxNzMuMzQgMTQ4LjQyIDE3MC4yNyAxNDcgMTY2IEMxNDMuNjUgMTYyLjA1IDE0MS42OCAxNjAuMTUgMTM2LjUgMTU5LjY5IEMxMjcuNTIgMTU5Ljg1IDExOS44OSAxNjQuNDIgMTE0IDE3MSBaIE0tNjU5IDE4NCBDLTY2My41IDE5MC43MyAtNjY1LjMxIDE5Ni45MSAtNjY0IDIwNSBDLTY2Mi42NiAyMDkuMzMgLTY2MC42NSAyMTEuNiAtNjU2Ljc1IDIxNCBDLTY1MC41NiAyMTUuNjUgLTY0Ni4wOCAyMTQuNzYgLTY0MC40NCAyMTIuMDYgQy02MzUuMDMgMjA4LjgzIC02MzIuMzMgMjA0LjIgLTYyOSAxOTkgQy02MjcuNjEgMTk3LjEyIC02MjYuMjIgMTk1LjI0IC02MjQuODEgMTkzLjM4IEMtNjE5LjYxIDE4Ni4yNiAtNjE1LjA2IDE3OS4xMiAtNjE2IDE3MCBDLTYxOC44NCAxNjYuMzUgLTYyMS41MSAxNjQuMTIgLTYyNiAxNjMgQy02NDAuNDYgMTYxLjUgLTY1MC44IDE3My4yNSAtNjU5IDE4NCBaICIgZmlsbD0iIzJhMmEyYSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTE3MSw2ODgpIi8+PHBhdGggZD0iTTAgMCBDNC4yMSAxLjQ5IDguNDQgMi44NyAxMi42OCA0LjI1IEMxOC45IDYuMyAyNS4wNCA4LjU0IDMxLjE2IDEwLjg4IEMzNi44MiAxMy4wMyA0Mi41NCAxNC45NCA0OC4zIDE2Ljc5IEM1MC4yNCAxNy40NSA1Mi4xNyAxOC4xNCA1NC4wNCAxOC45NiBDNjIuMyAyMi41NiA3MC45MSAyNC4yNSA3OS42OCAyNi4xMiBDODEuMjUgMjYuNDYgODIuODEgMjYuODEgODQuMzcgMjcuMTUgQzg4LjkxIDI4LjE0IDkzLjQ1IDI5LjEgOTggMzAuMDYgQzk4LjcxIDMwLjIxIDk5LjQyIDMwLjM2IDEwMC4xNSAzMC41MiBDMTAyLjE4IDMwLjk0IDEwNC4yIDMxLjM2IDEwNi4yMyAzMS43OCBDMTA2LjggMzEuOSAxMDYuOCAzMS45IDEwOS43MSAzMi41IEMxMzQuMDEgMzYuNjUgMTYxLjY0IDI3LjEgMTgxLjQzIDEzLjMxIEMxODIuMjYgMTIuNzIgMTgzLjA4IDEyLjEyIDE4My45MyAxMS41MSBDMTg3LjggOC43OSAxOTEuMzQgOC4yOSAxOTYgOS4wNiBDMjAwLjExIDExLjkyIDIwMS43MiAxNC44NiAyMDIuNzQgMTkuNzYgQzIwMy4xMyAyMy4yNCAyMDIuOTQgMjYuNjcgMjAyLjY4IDMwLjE1IEMyMDIuOTkgMzMgMjAzLjUxIDM0LjIzIDIwNC44NCAzNi42OSBDMjA3LjU0IDQxLjc1IDIwOC41NCA0Ni45NyAyMDkuNjIgNTIuNTYgQzIwOS44NCA1My42MSAyMTAuMDUgNTQuNjcgMjEwLjI3IDU1Ljc1IEMyMTEuNzMgNjMuMTIgMjEyLjc5IDcwLjQ0IDIxMy40NCA3Ny45MiBDMjE0LjA3IDgxLjQ2IDIxNC43MSA4My4yOCAyMTcgODYuMDYgQzIxOS40NCA4Ny43NCAyMjIuMDIgODkuMDYgMjI0LjY4IDkwLjM3IEMyMjUuMDQgOTAuNTUgMjI1LjA0IDkwLjU1IDIyNi44MSA5MS40NiBDMjI4LjUzIDkyLjM0IDIzMC4yNiA5My4yIDIzMiA5NC4wNiBDMjMxLjQ1IDk0Ljk2IDIzMC45MSA5NS44NSAyMzAuMzUgOTYuNzcgQzIyNC4xMiAxMDcuMjIgMjE4Ljk1IDExNi43NCAyMjIgMTI5LjIyIEMyMjMuNTIgMTM2Ljc0IDIyMy4zMSAxNDQuMzUgMjIzLjMgMTUxLjk5IEMyMjMuMyAxNTMuNjIgMjIzLjMxIDE1NS4yNiAyMjMuMzEgMTU2Ljg5IEMyMjMuMzIgMTYwLjMxIDIyMy4zMiAxNjMuNzMgMjIzLjMxIDE2Ny4xNCBDMjIzLjMxIDE3MS40OSAyMjMuMzIgMTc1LjgzIDIyMy4zNSAxODAuMTcgQzIyMy4zNiAxODMuNTUgMjIzLjM2IDE4Ni45MyAyMjMuMzYgMTkwLjMgQzIyMy4zNiAxOTEuOSAyMjMuMzcgMTkzLjUgMjIzLjM4IDE5NS4xIEMyMjMuNDQgMjA2LjgxIDIyMi45NyAyMTguMjggMjE3LjA5IDIyOC43MSBDMjE1Ljg2IDIzMS4zNiAyMTUuMDggMjM0LjA2IDIxNC4yOSAyMzYuODYgQzIxMS4xNSAyNDcuOTUgMjA2LjIgMjU2LjA3IDE5NiAyNjIuMDYgQzE4Ny4zMyAyNjYuNSAxNzQuODEgMjY3LjQyIDE2NS40MyAyNjUgQzE2MC4wNiAyNjIuOTggMTU1LjU3IDI2MC4yIDE1Mi45NCAyNTQuOTUgQzE0Ny4wMiAyMzguNTQgMTQ5LjE5IDIxOC43MSAxNTMgMjAyLjA2IEMxNTMuMjQgMjAwLjkxIDE1My40OCAxOTkuNzcgMTUzLjc0IDE5OC41OSBDMTU5LjAzIDE3Ni4zNCAxNjguNDEgMTQ5LjkzIDE4NCAxMzIuNjkgQzE4Ni40NiAxMjkuOTIgMTg4LjEyIDEyNy4xIDE4OS44MSAxMjMuODEgQzE5Mi4wNCAxMTkuNTIgMTk0LjU2IDExNS45OSAxOTcuNjggMTEyLjMxIEMyMDMuMzYgMTA1LjU3IDIwNS43IDk5LjkgMjA2IDkxLjA2IEMyMDUuNjYgODguMjggMjA0Ljk4IDg1LjY0IDIwNC4yNSA4Mi45NCBDMjAyLjUgNzUuODEgMjAxLjI1IDY4LjcxIDIwMC4zMSA2MS40NCBDMjAwLjE4IDYwLjQ2IDIwMC4wNSA1OS40OSAxOTkuOTIgNTguNDkgQzE5OS4zNiA1NC4wNCAxOTguOTMgNDkuNjggMTk4Ljk0IDQ1LjE4IEMxOTguOTUgNDEuMzcgMTk4LjkyIDM3Ljc5IDE5OCAzNC4wNiBDMTk0Ljk3IDMxLjE5IDE5Mi4wNiAzMC41OSAxODggMzAuMDYgQzE4Ny4yOCAyOS45IDE4Ni41NiAyOS43NCAxODUuODMgMjkuNTggQzE3OS44MSAyOC44MSAxNzUuODggMzEuNzIgMTcwLjkxIDM0Ljc4IEMxNTYuMzUgNDMuNDQgMTM5LjYgNDUuMjkgMTIzIDQ2LjA2IEMxMjEuNyA0Ni4xMyAxMjAuNCA0Ni4yIDExOS4wNiA0Ni4yOCBDMTA2LjEyIDQ2LjY0IDkzLjk0IDQzLjQ3IDgxLjYzIDM5Ljg5IEM3Ny4wNCAzOC41NyA3Mi41MyAzNy41OCA2Ny44MSAzNi44MSBDNjAuMDQgMzUuMzcgNTMuMDUgMzIuNDUgNDUuNzYgMjkuNDYgQzM5LjYyIDI2Ljk4IDMzLjU2IDI0Ljk4IDI3LjEyIDIzLjQ0IEMyMS4xOCAyMiAxNS42NiAyMC4yNiAxMC4wNiAxNy44MSBDLTIwLjggNC41IC02MS4zNiAtOC4zMSAtOTQuNjMgMy4xMiBDLTEwMS40OCA1LjkxIC0xMDYuNTUgMTAuMTcgLTExMiAxNS4wNiBDLTExMi44NyAxNS42OSAtMTEzLjczIDE2LjMyIC0xMTQuNjIgMTYuOTcgQy0xMTcuMzggMTkuMzkgLTExOC42MSAyMS41NyAtMTIwLjE5IDI0Ljg3IEMtMTIwLjY4IDI1Ljg3IC0xMjEuMTcgMjYuODcgLTEyMS42NyAyNy44OSBDLTEyNC43MyAzNS4xNiAtMTI1LjIgNDEuMDQgLTEyNC44NCA0OC43NCBDLTEyNC43IDUzLjk3IC0xMjUuNTUgNTcuNDIgLTEyOCA2Mi4wNiBDLTEyOS44OCA2My4zMSAtMTI5Ljg4IDYzLjMxIC0xMzIgNjMuMDYgQy0xMzUuNTggNjAuMDcgLTEzNy43MiA1Ny44MiAtMTM4LjIxIDUzLjA2IEMtMTM4LjQ2IDM5Ljc0IC0xMzcuNTcgMjQuNzcgLTEyOSAxNC4wNiBDLTEyOC42OSAxMy42MyAtMTI4LjY5IDEzLjYzIC0xMjcuMTIgMTEuNDYgQy0xMjIuOTkgNS45NyAtMTE4Ljc4IDEuNzUgLTExMyAtMS45NCBDLTExMi4xIC0yLjU0IC0xMTEuMTkgLTMuMTQgLTExMC4yNSAtMy43NSBDLTEwMy4zNCAtOC4wNyAtOTcuMDIgLTEwLjU1IC04OSAtMTEuOTQgQy04Ny44NCAtMTIuMTUgLTg2LjY3IC0xMi4zNyAtODUuNDYgLTEyLjU5IEMtNTYuMzEgLTE3LjEzIC0yNy4zMSAtOS43NiAwIDAgWiBNMTkxLjU2IDEzNS41OCBDMTg5LjEgMTM5LjQ5IDE4Ny4zOCAxNDMuNzIgMTg1LjcxIDE0OC4wMiBDMTg0LjIgMTUxLjc4IDE4Mi41NCAxNTQuOCAxODAgMTU3Ljk4IEMxNzYuNzMgMTYyLjE1IDE3NS4wOSAxNjYuMzggMTczLjQzIDE3MS4zNyBDMTcyLjg1IDE3My4wNiAxNzIuMjYgMTc0Ljc1IDE3MS42NyAxNzYuNDQgQzE3MS4zOCAxNzcuMjUgMTcxLjEgMTc4LjA1IDE3MC44MSAxNzguODcgQzE2OS44IDE4MS41OSAxNjguNTYgMTg0LjE2IDE2Ny4yNSAxODYuNzUgQzE2NC4zNCAxOTIuOTEgMTYzLjMzIDE5OS40IDE2Mi4zMSAyMDYuMDggQzE2Mi4wMiAyMDcuOTIgMTYxLjcgMjA5Ljc2IDE2MS4zNyAyMTEuNiBDMTU5LjM1IDIyMy44MSAxNTcuMDggMjM5LjI3IDE2NC4zNiAyNTAuMDggQzE2Ny4xIDI1My41NSAxNjkuNTIgMjU2LjI1IDE3NCAyNTcuMDYgQzE4Mi4xMyAyNTcuMjggMTg5LjU4IDI1NC45NCAxOTUuNzUgMjQ5LjUzIEMxOTkuMjMgMjQ1LjY5IDIwMS44MyAyNDEuMjYgMjA0LjQxIDIzNi43OCBDMjA2IDIzNC4wNiAyMDYgMjM0LjA2IDIwNy4yMyAyMzIuMzYgQzIxMS4yNSAyMjYuNjYgMjEyLjA1IDIyMS40OCAyMTIuNjggMjE0LjYyIEMyMTIuOCAyMTMuNTcgMjEyLjkxIDIxMi41MSAyMTMuMDMgMjExLjQyIEMyMTMuMjYgMjA5LjMgMjEzLjQ4IDIwNy4xNyAyMTMuNjkgMjA1LjA0IEMyMTMuOTYgMjAyLjQgMjE0LjI4IDE5OS43NyAyMTQuNjIgMTk3LjEzIEMyMTQuNzIgMTk2LjQgMjE0LjgxIDE5NS42NiAyMTQuOTEgMTk0LjkgQzIxNSAxOTQuMjEgMjE1LjA5IDE5My41MiAyMTUuMTggMTkyLjgxIEMyMTYuNjYgMTgxLjQyIDIxNS45NyAxNjkuOTggMjE1LjMxIDE1OC41NSBDMjE1LjIzIDE1Ny4wOSAyMTUuMTUgMTU1LjY0IDIxNS4wOCAxNTQuMTggQzIxNC4xMiAxMzQuNSAyMTQuMTIgMTM0LjUgMjA5LjEyIDEyOSBDMjAyLjA5IDEyNS45IDE5Ni4wNSAxMzAuMSAxOTEuNTYgMTM1LjU4IFogIiBmaWxsPSIjMmEyYTJhIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyMzIuMDAyOTI5Njg3NSw3NzguOTM5NDUzMTI1KSIvPjwvZz4KPGcgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIj4KPHBhdGggZD0iTTU2NiA5OTYgUTY2MCA5NzAgNzg0IDk2NiIgc3Ryb2tlPSIjMmEyYTJhIi8+CjxwYXRoIGQ9Ik04MDAgOTY2IFE5MTAgOTY0IDEwMDQgOTg4IiBzdHJva2U9IiNlOGNmNmEiLz4KPHBhdGggZD0iTTEwMjIgMTAwMCBRMTE1MCAxMDEyIDEyOTQgOTg4IiBzdHJva2U9IiMzZjdhNjIiLz4KPC9nPgo8dGV4dCB4PSI1NTYiIHk9IjEwOTAiIGZvbnQtZmFtaWx5PSJIZWx2ZXRpY2EsIEFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjQ0IiBmaWxsPSIjNGE0YTRhIiB0ZXh0TGVuZ3RoPSI3MjgiIGxlbmd0aEFkanVzdD0ic3BhY2luZyI+zr3PhM65z4POus6/zrrOsc+GzrXOvc61zrnOvzwvdGV4dD4KPC9zdmc+" alt="Jamaika ντισκοκαφενείο" width="1740" height="520"></a>
+      <h1>Το μενού μας</h1>
+      <p>Από τον πρωινό καφέ μέχρι τον τελευταίο μεζέ. Κάθε μέρα 11:00 – 00:15 (Δευτέρα έως 00:30).</p>
+    </div>
+  </div>
+  <div class="tiles" aria-hidden="true"></div>
+  <nav class="cats" aria-label="Κατηγορίες μενού"><div class="wrap"><a href="#proino">Πρωινό</a><a href="#aloifes">Αλοιφές</a><a href="#salates">Σαλάτες</a><a href="#mezedes">Μεζέδες διαλεκτοί</a><a href="#zestotyria">Ζεστοτύρια</a><a href="#ouzomezedes">Ουζομεζέδες</a><a href="#merides">Μερίδες</a><a href="#zymarika">Ζυμαρικά</a><a class="drinks-chip" href="#pota">Ποτά & καφές</a></div></nav>
+
+  <section id="proino" class="cat">
+    <div class="wrap">
+      <h2>Πρωινό</h2>
+      <ul class="mlist">
+        <li class="mi">
+          <div class="th"><span class="noimg" aria-hidden="true"></span></div>
+          <div class="tx"><div class="nm"><span>Ομελέτα με λαχανικά &amp; τυρί λευκό</span></div></div>
+          <div class="pr">4,50 €</div>
+        </li>
+        <li class="mi">
+          <div class="th"><span class="noimg" aria-hidden="true"></span></div>
+          <div class="tx"><div class="nm"><span>Στραπατσάδα με τυρί λευκό &amp; ντομάτα</span></div></div>
+          <div class="pr">4,90 €</div>
+        </li>
+        <li class="mi">
+          <div class="th"><span class="noimg" aria-hidden="true"></span></div>
+          <div class="tx"><div class="nm"><span>Κριθαροκούλουρο με γιαούρτι &amp; μέλι</span></div></div>
+          <div class="pr">5,20 €</div>
+        </li>
+        <li class="mi">
+          <div class="th"><img src="https://cdn.e-food.gr/cdn-cgi/image/w=240,h=240,fit=cover,f=auto/restaurants/6739409/banner_item/000000000014" alt="Τοστ γαλοπούλα &amp; βούτυρο" width="120" height="120" loading="lazy" onerror="this.remove()"></div>
+          <div class="tx"><div class="nm"><span>Τοστ γαλοπούλα &amp; βούτυρο</span></div><p>Ψωμί τοστ λευκό</p></div>
+          <div class="pr">3,60 €</div>
+        </li>
+        <li class="mi">
+          <div class="th"><span class="noimg" aria-hidden="true"></span></div>
+          <div class="tx"><div class="nm"><span>Ψωμί ψημένο με μαρμελάδα &amp; βούτυρο</span></div></div>
+          <div class="pr">3,90 €</div>
+        </li>
+        <li class="mi">
+          <div class="th"><span class="noimg" aria-hidden="true"></span></div>
+          <div class="tx"><div class="nm"><span>Αυγά μάτια με λουκάνικο Βιέννης</span></div></div>
+          <div class="pr">4,00 €</div>
+        </li>
+        <li class="mi">
+          <div class="th"><img src="https://cdn.e-food.gr/cdn-cgi/image/w=240,h=240,fit=cover,f=auto/restaurants/6739409/banner_item/000000000016" alt="Ομελέτα με μπέικον καπνιστό" width="120" height="120" loading="lazy" onerror="this.remove()"></div>
+          <div class="tx"><div class="nm"><span>Ομελέτα με μπέικον καπνιστό</span></div></div>
+          <div class="pr">4,50 €</div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="aloifes" class="cat">
+    <div class="wrap">
+      <h2>Αλοιφές</h2>
+      <ul class="mlist">
+        <li class="mi">
+          <div class="th"><span class="noimg" aria-hidden="true"></span></div>
+          <div class="tx"><div class="nm"><span>Μελιτζανοσαλάτα</span></div><p>Χειροποίητη</p></div>
+          <div class="pr">4,00 €</div>
+        </li>
+        <li class="mi">
+          <div class="th"><span class="noimg" aria-hidden="true"></span></div>
+          <div class="tx"><div class="nm"><span>Χτυπητή</span></div><p>Με γλυκιά πιπεριά Φλωρίνης</p></div>
+          <div class="pr">4,00 €</div>
+        </li>
+        <li class="mi">
+          <div class="th"><span class="noimg" aria-hidden="true"></span></div>
+          <div class="tx"><div class="nm"><span>Τζατζίκι</span></div><p>Χειροποίητο</p></div>
+          <div class="pr">4,00 €</div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="salates" class="cat">
+    <div class="wrap">
+      <h2>Σαλάτες</h2>
+      <ul class="mlist">
+        <li class="mi">
+          <div class="th"><span class="noimg" aria-hidden="true"></span></div>
+          <div class="tx"><div class="nm"><span>Χωριάτικη</span></div><p>Ντομάτα, αγγούρι, κρεμμύδι, ρίγανη &amp; τυρί κατσικίσιο</p></div>
+          <div class="pr">7,00 €</div>
+        </li>
+        <li class="mi">
+          <div class="th"><span class="noimg" aria-hidden="true"></span></div>
+          <div class="tx"><div class="nm"><span>Αγγουροντομάτα</span></div></div>
+          <div class="pr">5,60 €</div>
+        </li>
+        <li class="mi pop">
+          <div class="th"><img src="https://cdn.e-food.gr/cdn-cgi/image/w=240,h=240,fit=cover,f=auto/restaurants/6739409/banner_item/000000000023" alt="Παντζαρού" width="120" height="120" loading="lazy" onerror="this.remove()"></div>
+          <div class="tx"><div class="nm"><span>Παντζαρού</span><b class="badge">Αγαπημένο</b></div><p>Παντζάρι, avocado, πορτοκάλι, τυρί κατσικίσιο, γιαούρτι, ελαιόλαδο &amp; σάλτσα μελιού</p></div>
+          <div class="pr">7,20 €</div>
+        </li>
+        <li class="mi">
+          <div class="th"><img src="https://cdn.e-food.gr/cdn-cgi/image/w=240,h=240,fit=cover,f=auto/restaurants/6739409/banner_item/000000000024" alt="Καίσαρα" width="120" height="120" loading="lazy" onerror="this.remove()"></div>
+          <div class="tx"><div class="nm"><span>Καίσαρα</span></div><p>Κοτόπουλο, iceberg, κρουτόν &amp; Caesar&#x27;s sauce</p></div>
+          <div class="pr">8,30 €</div>
+        </li>
+        <li class="mi">
+          <div class="th"><img src="https://cdn.e-food.gr/cdn-cgi/image/w=240,h=240,fit=cover,f=auto/restaurants/6739409/banner_item/000000000025" alt="Όλιβ" width="120" height="120" loading="lazy" onerror="this.remove()"></div>
+          <div class="tx"><div class="nm"><span>Όλιβ</span></div><p>Σπανάκι, ρόκα, πορτοκάλι, καρύδι &amp; παλαιωμένη σάλτσα βαλσάμικο με χυμό ρόδι</p></div>
+          <div class="pr">7,00 €</div>
+        </li>
+        <li class="mi pop">
+          <div class="th"><span class="noimg" aria-hidden="true"></span></div>
+          <div class="tx"><div class="nm"><span>Ντάκος</span><b class="badge">Αγαπημένο</b></div><p>Σάλτσα ντομάτας, τυρί λευκό, σάλτσα κρέμας, πολτός ελιάς &amp; λιαστής ντομάτας</p></div>
+          <div class="pr">7,80 €</div>
+        </li>
+        <li class="mi">
+          <div class="th"><img src="https://cdn.e-food.gr/cdn-cgi/image/w=240,h=240,fit=cover,f=auto/restaurants/6739409/banner_item/000000000027" alt="Πικάντικη" width="120" height="120" loading="lazy" onerror="this.remove()"></div>
+          <div class="tx"><div class="nm"><span>Πικάντικη</span></div><p>Λάχανο, κόκκινη πιπεριά &amp; σέλινο</p></div>
+          <div class="pr">4,60 €</div>
+        </li>
+        <li class="mi">
+          <div class="th"><span class="noimg" aria-hidden="true"></span></div>
+          <div class="tx"><div class="nm"><span>Κοκκινέλι</span></div><p>Παντζάρι, μεσκλάν, ξινομυζήθρα, καραμελωμένα κρεμμύδια, ελαιόλαδο &amp; σκόρδο</p></div>
+          <div class="pr">7,10 €</div>
+        </li>
+        <li class="mi">
+          <div class="th"><span class="noimg" aria-hidden="true"></span></div>
+          <div class="tx"><div class="nm"><span>Μαρούλι</span></div></div>
+          <div class="pr">4,60 €</div>
+        </li>
+        <li class="mi">
+          <div class="th"><img src="https://cdn.e-food.gr/cdn-cgi/image/w=240,h=240,fit=cover,f=auto/restaurants/6739409/banner_item/000000000205" alt="Τρικολόρε" width="120" height="120" loading="lazy" onerror="this.remove()"></div>
+          <div class="tx"><div class="nm"><span>Τρικολόρε</span></div><p>Ραντίτσιο, ρόκα, μήλο, χυμός πορτοκάλι, λεμόνι, μέλι, καρύδια, σταφίδα &amp; βαλσάμικο</p></div>
+          <div class="pr">7,30 €</div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="mezedes" class="cat">
+    <div class="wrap">
+      <h2>Μεζέδες διαλεκτοί</h2>
+      <ul class="mlist">
+        <li class="mi pop">
+          <div class="th"><span class="noimg" aria-hidden="true"></span></div>
+          <div class="tx"><div class="nm"><span>Πατάτες τηγανητές</span><b class="badge">Αγαπημένο</b></div><p>Φρέσκες</p></div>
+          <div class="pr">4,00 €</div>
+        </li>
+        <li class="mi">
+          <div class="th"><img src="https://cdn.e-food.gr/cdn-cgi/image/w=240,h=240,fit=cover,f=auto/restaurants/6739409/banner_item/000000000031" alt="Πατάτες σπαστές" width="120" height="120" loading="lazy" onerror="this.remove()"></div>
+          <div class="tx"><div class="nm"><span>Πατάτες σπαστές</span></div></div>
+          <div class="pr">6,10 €</div>
+        </li>
+        <li class="mi">
+          <div class="th"><img src="https://cdn.e-food.gr/cdn-cgi/image/w=240,h=240,fit=cover,f=auto/restaurants/6739409/banner_item/000000000032" alt="Πατάτες τηγανητές &amp; αυγό τηγανητό" width="120" height="120" loading="lazy" onerror="this.remove()"></div>
+          <div class="tx"><div class="nm"><span>Πατάτες τηγανητές &amp; αυγό τηγανητό</span></div><p>Φρέσκες</p></div>
+          <div class="pr">4,80 €</div>
+        </li>
+        <li class="mi">
+          <div class="th"><img src="https://cdn.e-food.gr/cdn-cgi/image/w=240,h=240,fit=cover,f=auto/restaurants/6739409/banner_item/000000000162" alt="Πατάτες τηγανητές με σως τυριού" width="120" height="120" loading="lazy" onerror="this.remove()"></div>
+          <div class="tx"><div class="nm"><span>Πατάτες τηγανητές με σως τυριού</span></div><p>Φρέσκες</p></div>
+          <div class="pr">5,60 €</div>
+        </li>
+        <li class="mi">
+          <div class="th"><img src="https://cdn.e-food.gr/cdn-cgi/image/w=240,h=240,fit=cover,f=auto/restaurants/6739409/banner_item/000000000033" alt="Πατάτα γεμιστή" width="120" height="120" loading="lazy" onerror="this.remove()"></div>
+          <div class="tx"><div class="nm"><span>Πατάτα γεμιστή</span></div><p>Με τυρί αγελαδινό, μπαχαρικά &amp; πιπεριές</p></div>
+          <div class="pr">5,80 €</div>
+        </li>
+        <li class="mi">
+          <div class="th"><img src="https://cdn.e-food.gr/cdn-cgi/image/w=240,h=240,fit=cover,f=auto/restaurants/6739409/banner_item/000000000034" alt="Κεμπάπ" width="120" height="120" loading="lazy" onerror="this.remove()"></div>
+          <div class="tx"><div class="nm"><span>Κεμπάπ</span></div><p>4 τεμάχια, με φρεσκοψημένη πίτα</p></div>
+          <div class="pr">7,30 €</div>
+        </li>
+        <li class="mi">
+          <div class="th"><span class="noimg" aria-hidden="true"></span></div>
+          <div class="tx"><div class="nm"><span>Αυγά με λουκάνικο χωριάτικο</span></div></div>
+          <div class="pr">5,80 €</div>
+        </li>
+        <li class="mi">
+          <div class="th"><span class="noimg" aria-hidden="true"></span></div>
+          <div class="tx"><div class="nm"><span>Σουτζουκάκια Θεσσαλονίκης</span></div><p>6 τεμάχια, χειροποίητα</p></div>
+          <div class="pr">8,80 €</div>
+        </li>
+        <li class="mi pop">
+          <div class="th"><img src="https://cdn.e-food.gr/cdn-cgi/image/w=240,h=240,fit=cover,f=auto/restaurants/6739409/banner_item/000000000036" alt="Τηγανιά κοτόπουλο" width="120" height="120" loading="lazy" onerror="this.remove()"></div>
+          <div class="tx"><div class="nm"><span>Τηγανιά κοτόπουλο</span><b class="badge">Αγαπημένο</b></div><p>Με μανιτάρια</p></div>
+          <div class="pr">8,80 €</div>
+        </li>
+        <li class="mi">
+          <div class="th"><img src="https://cdn.e-food.gr/cdn-cgi/image/w=240,h=240,fit=cover,f=auto/restaurants/6739409/banner_item/000000000037" alt="Τηγανιά χοιρινή" width="120" height="120" loading="lazy" onerror="this.remove()"></div>
+          <div class="tx"><div class="nm"><span>Τηγανιά χοιρινή</span></div><p>Με πιπεριές</p></div>
+          <div class="pr">8,20 €</div>
+        </li>
+        <li class="mi">
+          <div class="th"><img src="https://cdn.e-food.gr/cdn-cgi/image/w=240,h=240,fit=cover,f=auto/restaurants/6739409/banner_item/000000000038" alt="Τηγανιά μανιταριών" width="120" height="120" loading="lazy" onerror="this.remove()"></div>
+          <div class="tx"><div class="nm"><span>Τηγανιά μανιταριών</span></div><p>Με λεμόνι &amp; κρεμμύδι</p></div>
+          <div class="pr">6,20 €</div>
+        </li>
+        <li class="mi pop">
+          <div class="th"><img src="https://cdn.e-food.gr/cdn-cgi/image/w=240,h=240,fit=cover,f=auto/restaurants/6739409/banner_item/000000000040" alt="Ρεβυθοκεφτέδες" width="120" height="120" loading="lazy" onerror="this.remove()"></div>
+          <div class="tx"><div class="nm"><span>Ρεβυθοκεφτέδες</span><b class="badge">Αγαπημένο</b></div><p>4 τεμάχια, με σως μαγιονέζας</p></div>
+          <div class="pr">4,80 €</div>
+        </li>
+        <li class="mi">
+          <div class="th"><img src="https://cdn.e-food.gr/cdn-cgi/image/w=240,h=240,fit=cover,f=auto/restaurants/6739409/banner_item/000000000039" alt="Κολοκυθοκεφτέδες" width="120" height="120" loading="lazy" onerror="this.remove()"></div>
+          <div class="tx"><div class="nm"><span>Κολοκυθοκεφτέδες</span></div><p>3 τεμάχια, με δυόσμο &amp; τζατζίκι</p></div>
+          <div class="pr">5,30 €</div>
+        </li>
+        <li class="mi">
+          <div class="th"><span class="noimg" aria-hidden="true"></span></div>
+          <div class="tx"><div class="nm"><span>2 Φλογέρες με αλλαντικά &amp; τυριά</span></div><p>2 τεμάχια</p></div>
+          <div class="pr">6,50 €</div>
+        </li>
+        <li class="mi">
+          <div class="th"><span class="noimg" aria-hidden="true"></span></div>
+          <div class="tx"><div class="nm"><span>2 Φλογέρες με παστουρμά</span></div><p>2 τεμάχια</p></div>
+          <div class="pr">7,20 €</div>
+        </li>
+        <li class="mi">
+          <div class="th"><img src="https://cdn.e-food.gr/cdn-cgi/image/w=240,h=240,fit=cover,f=auto/restaurants/6739409/banner_item/000000000041" alt="Σαρμαδάκια γιαλαντζί" width="120" height="120" loading="lazy" onerror="this.remove()"></div>
+          <div class="tx"><div class="nm"><span>Σαρμαδάκια γιαλαντζί</span></div><p>4 τεμάχια, με γιαούρτι</p></div>
+          <div class="pr">6,50 €</div>
+        </li>
+        <li class="mi">
+          <div class="th"><img src="https://cdn.e-food.gr/cdn-cgi/image/w=240,h=240,fit=cover,f=auto/restaurants/6739409/banner_item/000000000042" alt="Πιπεριά καυτερή" width="120" height="120" loading="lazy" onerror="this.remove()"></div>
+          <div class="tx"><div class="nm"><span>Πιπεριά καυτερή</span></div></div>
+          <div class="pr">2,70 €</div>
+        </li>
+        <li class="mi">
+          <div class="th"><img src="https://cdn.e-food.gr/cdn-cgi/image/w=240,h=240,fit=cover,f=auto/restaurants/6739409/banner_item/000000000043" alt="Μελιτζάνα ψητή" width="120" height="120" loading="lazy" onerror="this.remove()"></div>
+          <div class="tx"><div class="nm"><span>Μελιτζάνα ψητή</span></div><p>Με τυρί αγελαδινό, ελαιόλαδο, μαϊντανό &amp; κύβους ντομάτας</p></div>
+          <div class="pr">5,80 €</div>
+        </li>
+        <li class="mi">
+          <div class="th"><img src="https://cdn.e-food.gr/cdn-cgi/image/w=240,h=240,fit=cover,f=auto/restaurants/6739409/banner_item/000000000044" alt="Πιπεριές Φλωρίνης γεμιστές ψητές" width="120" height="120" loading="lazy" onerror="this.remove()"></div>
+          <div class="tx"><div class="nm"><span>Πιπεριές Φλωρίνης γεμιστές ψητές</span></div><p>Με τυρί αγελαδινό &amp; μπαχαρικά</p></div>
+          <div class="pr">5,80 €</div>
+        </li>
+        <li class="mi">
+          <div class="th"><span class="noimg" aria-hidden="true"></span></div>
+          <div class="tx"><div class="nm"><span>Πιπεριές Φλωρίνης ψητές</span></div><p>Με λάδι &amp; ξύδι</p></div>
+          <div class="pr">3,20 €</div>
+        </li>
+        <li class="mi">
+          <div class="th"><span class="noimg" aria-hidden="true"></span></div>
+          <div class="tx"><div class="nm"><span>Τυρί κατσικίσιο Χαλκιδικής</span></div></div>
+          <div class="pr">4,30 €</div>
+        </li>
+        <li class="mi">
+          <div class="th"><img src="https://cdn.e-food.gr/cdn-cgi/image/w=240,h=240,fit=cover,f=auto/restaurants/6739409/banner_item/000000000047" alt="Φάβα" width="120" height="120" loading="lazy" onerror="this.remove()"></div>
+          <div class="tx"><div class="nm"><span>Φάβα</span></div><p>Με κάππαρη Κρήτης</p></div>
+          <div class="pr">4,80 €</div>
+        </li>
+        <li class="mi">
+          <div class="th"><span class="noimg" aria-hidden="true"></span></div>
+          <div class="tx"><div class="nm"><span>Μανιτάρια a la creme</span></div></div>
+          <div class="pr">7,70 €</div>
+        </li>
+        <li class="mi">
+          <div class="th"><span class="noimg" aria-hidden="true"></span></div>
+          <div class="tx"><div class="nm"><span>Κολοκυθοανθοί γεμιστοί</span></div></div>
+          <div class="pr">6,50 €</div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="zestotyria" class="cat">
+    <div class="wrap">
+      <h2>Ζεστοτύρια</h2>
+      <ul class="mlist">
+        <li class="mi">
+          <div class="th"><span class="noimg" aria-hidden="true"></span></div>
+          <div class="tx"><div class="nm"><span>Ταλαγάνι σχάρας</span></div><p>Με μαρμελάδα ντομάτας</p></div>
+          <div class="pr">8,00 €</div>
+        </li>
+        <li class="mi">
+          <div class="th"><span class="noimg" aria-hidden="true"></span></div>
+          <div class="tx"><div class="nm"><span>Κεφαλοτύρι ελληνικό στο τηγάνι</span></div></div>
+          <div class="pr">6,50 €</div>
+        </li>
+        <li class="mi pop">
+          <div class="th"><img src="https://cdn.e-food.gr/cdn-cgi/image/w=240,h=240,fit=cover,f=auto/restaurants/6739409/banner_item/000000000049" alt="Μπουγιουρντί Θεσσαλονίκης" width="120" height="120" loading="lazy" onerror="this.remove()"></div>
+          <div class="tx"><div class="nm"><span>Μπουγιουρντί Θεσσαλονίκης</span><b class="badge">Αγαπημένο</b></div></div>
+          <div class="pr">7,10 €</div>
+        </li>
+        <li class="mi">
+          <div class="th"><span class="noimg" aria-hidden="true"></span></div>
+          <div class="tx"><div class="nm"><span>Γραβιέρα Κρήτης στο τηγάνι</span></div><p>Με σπιτική μαρμελάδα ντομάτας</p></div>
+          <div class="pr">7,90 €</div>
+        </li>
+        <li class="mi">
+          <div class="th"><img src="https://cdn.e-food.gr/cdn-cgi/image/w=240,h=240,fit=cover,f=auto/restaurants/6739409/banner_item/000000000050" alt="Φέτα πανέ" width="120" height="120" loading="lazy" onerror="this.remove()"></div>
+          <div class="tx"><div class="nm"><span>Φέτα πανέ</span></div><p>Με αμύγδαλο &amp; μέλι</p></div>
+          <div class="pr">7,20 €</div>
+        </li>
+        <li class="mi">
+          <div class="th"><span class="noimg" aria-hidden="true"></span></div>
+          <div class="tx"><div class="nm"><span>Τυρί καπνιστό στο τηγάνι</span></div></div>
+          <div class="pr">6,10 €</div>
+        </li>
+        <li class="mi">
+          <div class="th"><img src="https://cdn.e-food.gr/cdn-cgi/image/w=240,h=240,fit=cover,f=auto/restaurants/6739409/banner_item/000000000054" alt="Κασεροκροκέτες" width="120" height="120" loading="lazy" onerror="this.remove()"></div>
+          <div class="tx"><div class="nm"><span>Κασεροκροκέτες</span></div><p>2 τεμάχια, παναρισμένες, με ντοματίνια &amp; κεφαλοτύρι</p></div>
+          <div class="pr">6,50 €</div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="ouzomezedes" class="cat">
+    <div class="wrap">
+      <h2>Ουζομεζέδες</h2>
+      <ul class="mlist">
+        <li class="mi">
+          <div class="th"><img src="https://cdn.e-food.gr/cdn-cgi/image/w=240,h=240,fit=cover,f=auto/restaurants/6739409/banner_item/000000000061" alt="Ποικιλία για ουζοτσίπουρα" width="120" height="120" loading="lazy" onerror="this.remove()"></div>
+          <div class="tx"><div class="nm"><span>Ποικιλία για ουζοτσίπουρα</span></div><p>Χταπόδι ξυδάτο, σκουμπρί, λουκάνικο, σαλάμι αέρος, κασέρι, τσίρος, γαύρος &amp; 2 αλοιφές</p></div>
+          <div class="pr">9,60 €</div>
+        </li>
+        <li class="mi">
+          <div class="th"><img src="https://cdn.e-food.gr/cdn-cgi/image/w=240,h=240,fit=cover,f=auto/restaurants/6739409/banner_item/000000000055" alt="Σκουμπρί λαδολέμονο" width="120" height="120" loading="lazy" onerror="this.remove()"></div>
+          <div class="tx"><div class="nm"><span>Σκουμπρί λαδολέμονο</span></div><p>Με λεμόνι &amp; ρίγανη</p></div>
+          <div class="pr">4,20 €</div>
+        </li>
+        <li class="mi">
+          <div class="th"><img src="https://cdn.e-food.gr/cdn-cgi/image/w=240,h=240,fit=cover,f=auto/restaurants/6739409/banner_item/000000000056" alt="Ρέγγα στο λάδι" width="120" height="120" loading="lazy" onerror="this.remove()"></div>
+          <div class="tx"><div class="nm"><span>Ρέγγα στο λάδι</span></div><p>Με φάβα, κάππαρη, ελαιόλαδο &amp; ξύδι</p></div>
+          <div class="pr">4,00 €</div>
+        </li>
+        <li class="mi">
+          <div class="th"><img src="https://cdn.e-food.gr/cdn-cgi/image/w=240,h=240,fit=cover,f=auto/restaurants/6739409/banner_item/000000000057" alt="Τσίρος σε λαδολέμονο" width="120" height="120" loading="lazy" onerror="this.remove()"></div>
+          <div class="tx"><div class="nm"><span>Τσίρος σε λαδολέμονο</span></div></div>
+          <div class="pr">4,80 €</div>
+        </li>
+        <li class="mi">
+          <div class="th"><span class="noimg" aria-hidden="true"></span></div>
+          <div class="tx"><div class="nm"><span>Γαύρος μαρινάτος</span></div><p>Χειροποίητος</p></div>
+          <div class="pr">5,10 €</div>
+        </li>
+        <li class="mi">
+          <div class="th"><img src="https://cdn.e-food.gr/cdn-cgi/image/w=240,h=240,fit=cover,f=auto/restaurants/6739409/banner_item/000000000059" alt="Χταπόδι ξυδάτο" width="120" height="120" loading="lazy" onerror="this.remove()"></div>
+          <div class="tx"><div class="nm"><span>Χταπόδι ξυδάτο</span></div><p>Με ελαιόλαδο, κρεμμύδι &amp; ξύδι</p></div>
+          <div class="pr">7,20 €</div>
+        </li>
+        <li class="mi">
+          <div class="th"><span class="noimg" aria-hidden="true"></span></div>
+          <div class="tx"><div class="nm"><span>Λακέρδα με φρέσκο λεμόνι</span></div></div>
+          <div class="pr">5,70 €</div>
+        </li>
+        <li class="mi">
+          <div class="th"><span class="noimg" aria-hidden="true"></span></div>
+          <div class="tx"><div class="nm"><span>Μπακαλιάρος σκορδαλιά &amp; λεμόνι</span></div></div>
+          <div class="pr">8,50 €</div>
+        </li>
+        <li class="mi">
+          <div class="th"><span class="noimg" aria-hidden="true"></span></div>
+          <div class="tx"><div class="nm"><span>Καλαμαράκια τηγανητά με λεμόνι</span></div></div>
+          <div class="pr">8,50 €</div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="merides" class="cat">
+    <div class="wrap">
+      <h2>Μερίδες</h2>
+      <ul class="mlist">
+        <li class="mi">
+          <div class="th"><span class="noimg" aria-hidden="true"></span></div>
+          <div class="tx"><div class="nm"><span>Κεφτέδες τηγανητοί</span></div><p>4-5 τεμάχια, με πατάτες τηγανητές</p></div>
+          <div class="pr">7,30 €</div>
+        </li>
+        <li class="mi">
+          <div class="th"><span class="noimg" aria-hidden="true"></span></div>
+          <div class="tx"><div class="nm"><span>Κεφτέδες παραδοσιακοί στη σχάρα</span></div><p>4 τεμάχια, με πατάτες τηγανητές</p></div>
+          <div class="pr">8,10 €</div>
+        </li>
+        <li class="mi pop">
+          <div class="th"><img src="https://cdn.e-food.gr/cdn-cgi/image/w=240,h=240,fit=cover,f=auto/restaurants/6739409/banner_item/000000000064" alt="Λουκάνικο χωριάτικο" width="120" height="120" loading="lazy" onerror="this.remove()"></div>
+          <div class="tx"><div class="nm"><span>Λουκάνικο χωριάτικο</span><b class="badge">Αγαπημένο</b></div><p>Με πατάτες τηγανητές &amp; BBQ sauce</p></div>
+          <div class="pr">8,10 €</div>
+        </li>
+        <li class="mi">
+          <div class="th"><span class="noimg" aria-hidden="true"></span></div>
+          <div class="tx"><div class="nm"><span>Λουκάνικο Τζουμαγιάς</span></div><p>4 τεμάχια, με πατάτες τηγανητές &amp; BBQ sauce</p></div>
+          <div class="pr">8,80 €</div>
+        </li>
+        <li class="mi pop">
+          <div class="th"><img src="https://cdn.e-food.gr/cdn-cgi/image/w=240,h=240,fit=cover,f=auto/restaurants/6739409/banner_item/000000000066" alt="Κοψίδια σχάρας" width="120" height="120" loading="lazy" onerror="this.remove()"></div>
+          <div class="tx"><div class="nm"><span>Κοψίδια σχάρας</span><b class="badge">Αγαπημένο</b></div><p>Πανσετάκια χοιρινά, με πατάτες τηγανητές &amp; γλυκόξινη σάλτσα ψητού</p></div>
+          <div class="pr">8,80 €</div>
+        </li>
+        <li class="mi">
+          <div class="th"><img src="https://cdn.e-food.gr/cdn-cgi/image/w=240,h=240,fit=cover,f=auto/restaurants/6739409/banner_item/000000000206" alt="Σουβλάκι χοιρινό" width="120" height="120" loading="lazy" onerror="this.remove()"></div>
+          <div class="tx"><div class="nm"><span>Σουβλάκι χοιρινό</span></div><p>4 τεμάχια των 60gr, με πατάτες τηγανητές</p></div>
+          <div class="pr">8,80 €</div>
+        </li>
+        <li class="mi pop">
+          <div class="th"><img src="https://cdn.e-food.gr/cdn-cgi/image/w=240,h=240,fit=cover,f=auto/restaurants/6739409/banner_item/000000000067" alt="Φιλέτο κοτόπουλο" width="120" height="120" loading="lazy" onerror="this.remove()"></div>
+          <div class="tx"><div class="nm"><span>Φιλέτο κοτόπουλο</span><b class="badge">Αγαπημένο</b></div><p>Με πατάτες τηγανητές &amp; απαλή σάλτσα μουστάρδας</p></div>
+          <div class="pr">9,70 €</div>
+        </li>
+        <li class="mi">
+          <div class="th"><span class="noimg" aria-hidden="true"></span></div>
+          <div class="tx"><div class="nm"><span>Κοτομπουκιές</span></div><p>5-6 τεμάχια, με πατάτες τηγανητές &amp; σάλτσα μαγιονέζας</p></div>
+          <div class="pr">8,80 €</div>
+        </li>
+        <li class="mi pop">
+          <div class="th"><img src="https://cdn.e-food.gr/cdn-cgi/image/w=240,h=240,fit=cover,f=auto/restaurants/6739409/banner_item/000000000070" alt="Μπριζολάκια κοτόπουλο μπούτι" width="120" height="120" loading="lazy" onerror="this.remove()"></div>
+          <div class="tx"><div class="nm"><span>Μπριζολάκια κοτόπουλο μπούτι</span><b class="badge">Αγαπημένο</b></div><p>2 τεμάχια, με πατάτες τηγανητές &amp; μουστάρδα</p></div>
+          <div class="pr">8,90 €</div>
+        </li>
+        <li class="mi">
+          <div class="th"><img src="https://cdn.e-food.gr/cdn-cgi/image/w=240,h=240,fit=cover,f=auto/restaurants/6739409/banner_item/000000000071" alt="Μπριζολάκια χοιρινά" width="120" height="120" loading="lazy" onerror="this.remove()"></div>
+          <div class="tx"><div class="nm"><span>Μπριζολάκια χοιρινά</span></div><p>2 τεμάχια, με πατάτες τηγανητές &amp; γλυκιά σάλτσα ντομάτας</p></div>
+          <div class="pr">8,90 €</div>
+        </li>
+        <li class="mi">
+          <div class="th"><img src="https://cdn.e-food.gr/cdn-cgi/image/w=240,h=240,fit=cover,f=auto/restaurants/6739409/banner_item/000000000073" alt="Σνιτσελάκια κοτόπουλο" width="120" height="120" loading="lazy" onerror="this.remove()"></div>
+          <div class="tx"><div class="nm"><span>Σνιτσελάκια κοτόπουλο</span></div><p>2 τεμάχια, με πατάτες τηγανητές &amp; σάλτσα μουστάρδας</p></div>
+          <div class="pr">9,40 €</div>
+        </li>
+        <li class="mi">
+          <div class="th"><img src="https://cdn.e-food.gr/cdn-cgi/image/w=240,h=240,fit=cover,f=auto/restaurants/6739409/banner_item/000000000068" alt="Συκώτι μοσχαρίσιο σχάρας" width="120" height="120" loading="lazy" onerror="this.remove()"></div>
+          <div class="tx"><div class="nm"><span>Συκώτι μοσχαρίσιο σχάρας</span></div><p>Με πατάτες τηγανητές &amp; pesto βασιλικού</p></div>
+          <div class="pr">6,70 €</div>
+        </li>
+        <li class="mi">
+          <div class="th"><span class="noimg" aria-hidden="true"></span></div>
+          <div class="tx"><div class="nm"><span>Σνίτσελ χοιρινό</span></div><p>Με πατάτες τηγανητές &amp; απαλή σάλτσα ντομάτας</p></div>
+          <div class="pr">8,90 €</div>
+        </li>
+        <li class="mi">
+          <div class="th"><span class="noimg" aria-hidden="true"></span></div>
+          <div class="tx"><div class="nm"><span>Φτερούγες κοτόπουλο</span></div><p>4 τεμάχια, με πράσινη σαλάτα &amp; γλυκιά σάλτσα μαγιονέζας</p></div>
+          <div class="pr">6,50 €</div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="zymarika" class="cat">
+    <div class="wrap">
+      <h2>Ζυμαρικά</h2>
+      <ul class="mlist">
+        <li class="mi">
+          <div class="th"><img src="https://cdn.e-food.gr/cdn-cgi/image/w=240,h=240,fit=cover,f=auto/restaurants/6739409/banner_item/000000000076" alt="Σπαγγέτι ναπολιτέν" width="120" height="120" loading="lazy" onerror="this.remove()"></div>
+          <div class="tx"><div class="nm"><span>Σπαγγέτι ναπολιτέν</span></div></div>
+          <div class="pr">6,50 €</div>
+        </li>
+        <li class="mi">
+          <div class="th"><img src="https://cdn.e-food.gr/cdn-cgi/image/w=240,h=240,fit=cover,f=auto/restaurants/6739409/banner_item/000000000077" alt="Σπαγγέτι καρμπονάρα" width="120" height="120" loading="lazy" onerror="this.remove()"></div>
+          <div class="tx"><div class="nm"><span>Σπαγγέτι καρμπονάρα</span></div></div>
+          <div class="pr">7,80 €</div>
+        </li>
+        <li class="mi">
+          <div class="th"><img src="https://cdn.e-food.gr/cdn-cgi/image/w=240,h=240,fit=cover,f=auto/restaurants/6739409/banner_item/000000000078" alt="Σπαγγέτι aglio e olio" width="120" height="120" loading="lazy" onerror="this.remove()"></div>
+          <div class="tx"><div class="nm"><span>Σπαγγέτι aglio e olio</span></div></div>
+          <div class="pr">7,20 €</div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="pota" class="board-sec drinks">
+    <div class="wrap">
+      <span class="kicker">Ποτά & καφές</span>
+      <h2>Και κάτι να πιούμε;</h2>
+      <div class="board dboard"><div class="dcol"><h3>Καφέδες</h3><div class="item"><span>Espresso</span><span class="dots"></span><span class="price">3,40 €</span></div><div class="item"><span>Espresso ristretto</span><span class="dots"></span><span class="price">3,00 €</span></div><div class="item"><span>Espresso americano</span><span class="dots"></span><span class="price">3,40 €</span></div><div class="item"><span>Espresso macchiato</span><span class="dots"></span><span class="price">3,60 €</span></div><div class="item"><span>Cappuccino</span><span class="dots"></span><span class="price">4,10 €</span></div><div class="item"><span>Cappuccino latte</span><span class="dots"></span><span class="price">4,20 €</span></div><div class="item"><span>Freddo cappuccino</span><span class="dots"></span><span class="price">4,80 €</span></div><div class="item"><span>Nes</span><span class="dots"></span><span class="price">3,40 €</span></div><div class="item"><span>Frappé</span><span class="dots"></span><span class="price">3,40 €</span></div><div class="item"><span>Φίλτρου</span><span class="dots"></span><span class="price">3,90 €</span></div><div class="item"><span>Ελληνικός</span><span class="dots"></span><span class="price">3,40 €</span></div></div><div class="dcol"><h3>Ροφήματα &amp; χυμοί</h3><div class="item"><span>Σοκολάτα</span><span class="dots"></span><span class="price">4,20 €</span></div><div class="item"><span>Σοκολάτα viennois</span><span class="dots"></span><span class="price">5,80 €</span></div><div class="item"><span>Σπιτική λεμονάδα</span><span class="dots"></span><span class="price">4,30 €</span></div><div class="item"><span>Σπιτική φραουλάδα</span><span class="dots"></span><span class="price">4,30 €</span></div><div class="item"><span>Σπιτική βυσσινάδα</span><span class="dots"></span><span class="price">4,30 €</span></div><div class="item"><span>Χυμός πορτοκάλι</span><span class="dots"></span><span class="price">3,60 €</span></div><div class="item"><span>Χυμός cranberry</span><span class="dots"></span><span class="price">3,60 €</span></div><div class="item"><span>Χυμός ανανάς</span><span class="dots"></span><span class="price">3,60 €</span></div><div class="item"><span>Χυμός μπανάνα</span><span class="dots"></span><span class="price">3,60 €</span></div><div class="item"><span>Φυσικός χυμός πορτοκάλι</span><span class="dots"></span><span class="price">6,50 €</span></div></div><div class="dcol"><h3>Τσάι</h3><div class="item"><span>Κόκκινη πλατεία · ιβίσκος, cranberry &amp; μήλο</span><span class="dots"></span><span class="price">3,60 €</span></div><div class="item"><span>Olympus detox · βότανα του βουνού</span><span class="dots"></span><span class="price">3,60 €</span></div><div class="item"><span>Κόκκινο αμύγδαλο · αμύγδαλο, παντζάρι &amp; κανέλα</span><span class="dots"></span><span class="price">3,60 €</span></div><div class="item"><span>Αδελφές Tatin · μαύρο τσάι με μήλο</span><span class="dots"></span><span class="price">3,60 €</span></div></div><div class="dcol"><h3>Αναψυκτικά</h3><div class="item"><span>Coca-Cola 330ml</span><span class="dots"></span><span class="price">2,50 €</span></div><div class="item"><span>Coca-Cola zero 330ml</span><span class="dots"></span><span class="price">2,50 €</span></div><div class="item"><span>Fanta πορτοκάλι 330ml</span><span class="dots"></span><span class="price">2,50 €</span></div><div class="item"><span>Sprite 330ml</span><span class="dots"></span><span class="price">2,50 €</span></div><div class="item"><span>Fanta λεμονάδα 330ml</span><span class="dots"></span><span class="price">2,50 €</span></div><div class="item"><span>Σουρωτή 330ml</span><span class="dots"></span><span class="price">2,50 €</span></div><div class="item"><span>Three Cents pink grapefruit 200ml</span><span class="dots"></span><span class="price">4,80 €</span></div><div class="item"><span>Amita Motion 330ml</span><span class="dots"></span><span class="price">2,50 €</span></div><div class="item"><span>Μηλοκλέφτης 330ml</span><span class="dots"></span><span class="price">3,60 €</span></div><div class="item"><span>Red Bull 250ml</span><span class="dots"></span><span class="price">5,50 €</span></div><div class="item"><span>Νερό 500ml</span><span class="dots"></span><span class="price">0,50 €</span></div></div><div class="dcol"><h3>Μπύρες &amp; κρασιά</h3><div class="item"><span>Μάμος 500ml</span><span class="dots"></span><span class="price">5,20 €</span></div><div class="item"><span>Amstel 330ml</span><span class="dots"></span><span class="price">2,60 €</span></div><div class="item"><span>Heineken 330ml</span><span class="dots"></span><span class="price">2,60 €</span></div><div class="item"><span>Henninger 330ml</span><span class="dots"></span><span class="price">4,00 €</span></div><div class="item"><span>Άλφα 330ml</span><span class="dots"></span><span class="price">3,60 €</span></div><div class="item"><span>Νύμφη 330ml</span><span class="dots"></span><span class="price">4,20 €</span></div><div class="item"><span>Κρασί λευκό ξηρό χύμα 500ml</span><span class="dots"></span><span class="price">6,20 €</span></div><div class="item"><span>Κρασί κόκκινο ξηρό χύμα 500ml</span><span class="dots"></span><span class="price">6,70 €</span></div><div class="item"><span>Κρασί κόκκινο ημίγλυκο χύμα 500ml</span><span class="dots"></span><span class="price">6,90 €</span></div><div class="item"><span>Κρασί κόκκινο Jamaica 500ml</span><span class="dots"></span><span class="price">6,50 €</span></div><div class="item"><span>Ρετσίνα χύμα 500ml</span><span class="dots"></span><span class="price">4,50 €</span></div></div><div class="dcol"><h3>Αποστάγματα (200ml)</h3><div class="item"><span>Τσίπουρο χύμα</span><span class="dots"></span><span class="price">6,00 €</span></div><div class="item"><span>Τσίπουρο με γλυκάνισο χύμα</span><span class="dots"></span><span class="price">5,50 €</span></div><div class="item"><span>Ούζο χύμα</span><span class="dots"></span><span class="price">6,50 €</span></div><div class="item"><span>Ούζο με γλυκάνισο χύμα</span><span class="dots"></span><span class="price">6,00 €</span></div><div class="item"><span>Ρακί χύμα</span><span class="dots"></span><span class="price">6,00 €</span></div><div class="item"><span>Ρακί με γλυκάνισο χύμα</span><span class="dots"></span><span class="price">5,50 €</span></div><div class="item"><span>Ρακόμελο χύμα</span><span class="dots"></span><span class="price">9,50 €</span></div><div class="item"><span>Ρακόμελο με γλυκάνισο χύμα</span><span class="dots"></span><span class="price">9,50 €</span></div><div class="item"><span>Οινόμελο χύμα</span><span class="dots"></span><span class="price">9,50 €</span></div><div class="item"><span>Τσίπουρο Το Δεκαράκι Μαλαγουζιά</span><span class="dots"></span><span class="price">8,50 €</span></div><div class="item"><span>Τσίπουρο Αποστολάκη</span><span class="dots"></span><span class="price">8,50 €</span></div><div class="item"><span>Ούζο Μπαμπατζίμ με γλυκάνισο</span><span class="dots"></span><span class="price">9,50 €</span></div><div class="item"><span>Ούζο Μπαμπατζίμ χωρίς γλυκάνισο</span><span class="dots"></span><span class="price">9,50 €</span></div></div><div class="dcol"><h3>Cocktails</h3><div class="item"><span>Mojito classic / strawberry / cherry</span><span class="dots"></span><span class="price">8,00 €</span></div><div class="item"><span>Aperol spritz</span><span class="dots"></span><span class="price">8,00 €</span></div><div class="item"><span>Paloma</span><span class="dots"></span><span class="price">8,00 €</span></div><div class="item"><span>Margarita lime / strawberry</span><span class="dots"></span><span class="price">8,00 €</span></div><div class="item"><span>Negroni</span><span class="dots"></span><span class="price">8,60 €</span></div><div class="item"><span>Mai Tai</span><span class="dots"></span><span class="price">8,00 €</span></div><div class="item"><span>Cosmopolitan</span><span class="dots"></span><span class="price">8,00 €</span></div><div class="item"><span>Cuba Libre</span><span class="dots"></span><span class="price">8,00 €</span></div><div class="item"><span>Daiquiri lime / strawberry</span><span class="dots"></span><span class="price">8,00 €</span></div><div class="item"><span>Caipirinha</span><span class="dots"></span><span class="price">8,00 €</span></div><div class="item"><span>Long Island iced tea</span><span class="dots"></span><span class="price">8,00 €</span></div><div class="item"><span>Tequila Sunrise</span><span class="dots"></span><span class="price">8,00 €</span></div><div class="item"><span>Dry / Sweet martini</span><span class="dots"></span><span class="price">6,00 €</span></div><div class="item"><span>Moscow mule</span><span class="dots"></span><span class="price">6,00 €</span></div><div class="item"><span>Bitter bull</span><span class="dots"></span><span class="price">6,00 €</span></div><div class="item"><span>Espresso martini</span><span class="dots"></span><span class="price">6,00 €</span></div></div><div class="dcol"><h3>Cheap...tails</h3><div class="item"><span>Frau LOLA · γράπα, lime, βανίλια &amp; φράουλα</span><span class="dots"></span><span class="price">7,80 €</span></div><div class="item"><span>Raquiri · ρακόμελο, lime, πιπέρι &amp; ανανάς</span><span class="dots"></span><span class="price">7,80 €</span></div><div class="item"><span>Jamaouna · γράπα, lime, βανίλια &amp; passion fruit</span><span class="dots"></span><span class="price">7,80 €</span></div><div class="item"><span>King Long · γράπα, lime, δυόσμος &amp; μήλο</span><span class="dots"></span><span class="price">7,80 €</span></div></div><div class="dcol"><h3>Mocktails</h3><div class="item"><span>Iced tea ginger</span><span class="dots"></span><span class="price">5,00 €</span></div><div class="item"><span>Arizona sunset</span><span class="dots"></span><span class="price">8,50 €</span></div><div class="item"><span>Piña colada virgin</span><span class="dots"></span><span class="price">8,50 €</span></div><div class="item"><span>Nojito / Nojito strawberry</span><span class="dots"></span><span class="price">8,50 €</span></div><div class="item"><span>Virgin Margarita / strawberry</span><span class="dots"></span><span class="price">8,50 €</span></div></div></div>
+    </div>
+  </section>
+
+  <div class="back">
+    <p class="lead" style="margin-bottom:6px">Κουβέρ: ψωμί προζύμης με κουρκουμά &amp; σκληρό σιτάρι · 0,80 €</p>
+    <p class="lead" style="margin-bottom:18px;font-size:.9rem">Οι τιμές μπορεί να αλλάξουν. Για αλλεργίες ή διατροφικές ανάγκες ρώτα το προσωπικό.</p>
+    <a class="btn primary" href="tel:+302310888557">Κάλεσέ μας · 2310 888557</a>
+    &nbsp; <a class="btn ghost" href="index.html">← Αρχική</a>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="serif">Εδώ τους μπελάδες τους γλεντάμε!</div>
+    <div>© Τζαμάικα Ντισκοκαφενείο · Θεσσαλονίκη</div>
+  </div>
+</footer>
+</body>
+</html>
